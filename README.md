@@ -11,7 +11,7 @@ to use program
 	-i input directory
 	-o output video file mov
 	-w frame width
-    	-h frame height
+	-h frame height
 	-f frames per second
 	-s stretch image (if not set will resize to keep aspect ratio)
 	
