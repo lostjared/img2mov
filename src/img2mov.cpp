@@ -23,17 +23,19 @@ inline int AC_GetFZ(int oldh, int y, int nh) {
 
 class img2mov {
 public:
-    img2mov(std::string d, std::string f, double fps_, unsigned int w_, unsigned int h_) : filen(f), dirn(d), fps(fps_), w(w_), h(h_) {}
+    img2mov(std::string d, std::string f, double fps_, unsigned int w_, unsigned int h_, bool stretch_) : filen(f), dirn(d), fps(fps_), w(w_), h(h_), stretch_image(stretch_) {}
     void run();
     void add_directory(std::string path, std::vector<std::string> &files);
 private:
     std::string filen, dirn;
     double fps;
     unsigned int w, h;
+    bool stretch_image;
 };
 
 
 std::string toLower(const std::string &text);
+cv::Mat resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dstSize, const cv::Scalar &bgcolor);
 
 int main(int argc, char **argv) {
     if(argc > 1) {
@@ -41,7 +43,8 @@ int main(int argc, char **argv) {
         std::string dir_name, file_name;
         double fps = 0;
         unsigned int width = 0, height = 0;
-        while((opt = getopt(argc, argv, "i:o:w:h:f:")) != -1) {
+        bool stretch = false;
+        while((opt = getopt(argc, argv, "i:o:w:h:f:s")) != -1) {
             switch(opt) {
                 case 'i':
                     dir_name = optarg;
@@ -58,6 +61,9 @@ int main(int argc, char **argv) {
                 case 'h':
                     height = atoi(optarg);
                     break;
+                case 's':
+                    stretch = true;
+                    break;
                 default:
                     std::cout << " use: " << argv[0] << " -i filename\n";
                     exit(0);
@@ -69,7 +75,7 @@ int main(int argc, char **argv) {
             std::cerr << argv[0] << " -i directory -o video -w width -h height -f fps\n";
             exit(EXIT_FAILURE);
         }
-        img2mov program(dir_name, file_name,fps,width,height);
+        img2mov program(dir_name, file_name,fps,width,height,stretch);
         program.run();
     } else {
         std::cerr << "Requires input/output flags..\n";
@@ -105,14 +111,18 @@ void img2mov::run() {
         }
         
         cv::Mat image;
-        image.create(cvSize(w, h), CV_8UC3);
-        for(unsigned int z = 0; z < image.rows; ++z) {
-            for(unsigned int i = 0; i < image.cols; ++i) {
-                int cX = AC_GetFX(frame.cols, i, image.cols);
-                int cY = AC_GetFZ(frame.rows, z, image.rows);
-                cv::Vec3b &pixel = image.at<cv::Vec3b>(z, i);
-                pixel = frame.at<cv::Vec3b>(cY, cX);
+        if(stretch_image) {
+            image.create(cvSize(w, h), CV_8UC3);
+            for(unsigned int z = 0; z < image.rows; ++z) {
+                for(unsigned int i = 0; i < image.cols; ++i) {
+                    int cX = AC_GetFX(frame.cols, i, image.cols);
+                    int cY = AC_GetFZ(frame.rows, z, image.rows);
+                    cv::Vec3b &pixel = image.at<cv::Vec3b>(z, i);
+                    pixel = frame.at<cv::Vec3b>(cY, cX);
+                }
             }
+        } else {
+            image = resizeKeepAspectRatio(frame, cv::Size(w, h), cv::Scalar(0,0,0));
         }
         writer.write(image);
         std::cout << "Wrote frame: " << files_v[i] << " [" << frame_count << "/" << files_v.size() << "]\n";
@@ -144,7 +154,7 @@ void img2mov::add_directory(std::string path, std::vector<std::string> &files) {
         }
         if(f_info.length()>0 && f_info[0] != '.') {
             if(toLower(fullpath).find("png") != std::string::npos || toLower(fullpath).find("jpg") != std::string::npos) {
-            	files.push_back(fullpath);
+                files.push_back(fullpath);
             }
         }
     }
@@ -157,4 +167,22 @@ std::string toLower(const std::string &text) {
         temp += tolower(text[i]);
     }
     return temp;
+}
+
+cv::Mat resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dstSize, const cv::Scalar &bgcolor)
+{
+    cv::Mat output;
+    double h1 = dstSize.width * (input.rows/(double)input.cols);
+    double w2 = dstSize.height * (input.cols/(double)input.rows);
+    if( h1 <= dstSize.height) {
+        cv::resize( input, output, cv::Size(dstSize.width, h1));
+    } else {
+        cv::resize( input, output, cv::Size(w2, dstSize.height));
+    }
+    int top = (dstSize.height-output.rows) / 2;
+    int down = (dstSize.height-output.rows+1) / 2;
+    int left = (dstSize.width - output.cols) / 2;
+    int right = (dstSize.width - output.cols+1) / 2;
+    cv::copyMakeBorder(output, output, top, down, left, right, cv::BORDER_CONSTANT, bgcolor );
+    return output;
 }
