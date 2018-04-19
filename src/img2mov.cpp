@@ -1,89 +1,4 @@
-#include<opencv2/opencv.hpp>
-#include<iostream>
-#include<vector>
-#include<string>
-#include<algorithm>
-#include<cctype>
-#include<cstdlib>
-#include<unistd.h>
-#include<dirent.h>
-#include<sys/types.h>
-#include<sys/stat.h>
-
-// Resize X variable
-inline int AC_GetFX(int oldw,int x, int nw) {
-    float xp = (float)x * (float)oldw / (float)nw;
-    return (int)xp;
-}
-// Resize Y Variable
-inline int AC_GetFZ(int oldh, int y, int nh) {
-    float yp = (float)y * (float)oldh / (float)nh;
-    return (int)yp;
-}
-
-class img2mov {
-public:
-    img2mov(std::string d, std::string f, double fps_, unsigned int w_, unsigned int h_, bool stretch_) : filen(f), dirn(d), fps(fps_), w(w_), h(h_), stretch_image(stretch_) {}
-    void run();
-    void add_directory(std::string path, std::vector<std::string> &files);
-private:
-    std::string filen, dirn;
-    double fps;
-    unsigned int w, h;
-    bool stretch_image;
-};
-
-
-std::string toLower(const std::string &text);
-cv::Mat resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dstSize, const cv::Scalar &bgcolor);
-
-int main(int argc, char **argv) {
-    if(argc > 1) {
-        int opt;
-        std::string dir_name, file_name;
-        double fps = 0;
-        unsigned int width = 0, height = 0;
-        bool stretch = false;
-        while((opt = getopt(argc, argv, "i:o:w:h:f:s")) != -1) {
-            switch(opt) {
-                case 'i':
-                    dir_name = optarg;
-                    break;
-                case 'o':
-                    file_name = optarg;
-                    break;
-                case 'f':
-                    fps = atof(optarg);
-                    break;
-                case 'w':
-                    width = atoi(optarg);
-                    break;
-                case 'h':
-                    height = atoi(optarg);
-                    break;
-                case 's':
-                    stretch = true;
-                    break;
-                default:
-                    std::cout << " use: " << argv[0] << " -i filename\n";
-                    exit(0);
-                    break;
-            }
-        }
-        if(width == 0  || height == 0 || fps == 0 || dir_name.length() == 0 || file_name.length() == 0) {
-            std::cerr << "Requires input/output flags..\n";
-            std::cerr << argv[0] << " -i directory -o video -w width -h height -f fps\n";
-            exit(EXIT_FAILURE);
-        }
-        img2mov program(dir_name, file_name,fps,width,height,stretch);
-        program.run();
-    } else {
-        std::cerr << "Requires input/output flags..\n";
-        std::cerr << argv[0] << " -i directory -o video\n";
-        exit(EXIT_FAILURE);
-    }
-    return 0;
-}
+#include "img2mov.hpp"
 
 void img2mov::run() {
     std::vector<std::string> files_v;
@@ -186,3 +101,5 @@ cv::Mat resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dstSize, con
     cv::copyMakeBorder(output, output, top, down, left, right, cv::BORDER_CONSTANT, bgcolor );
     return output;
 }
+
+
