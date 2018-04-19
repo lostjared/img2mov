@@ -12,6 +12,8 @@
 #include<dirent.h>
 #include<sys/types.h>
 #include<sys/stat.h>
+#include<signal.h>
+
 
 // Resize X variable
 inline int AC_GetFX(int oldw,int x, int nw) {
@@ -29,11 +31,13 @@ public:
     img2mov(std::string d, std::string f, double fps_, unsigned int w_, unsigned int h_, bool stretch_) : filen(f), dirn(d), fps(fps_), w(w_), h(h_), stretch_image(stretch_) {}
     void run();
     void add_directory(std::string path, std::vector<std::string> &files);
+    void stop();
 private:
     std::string filen, dirn;
     double fps;
     unsigned int w, h;
     bool stretch_image;
+    bool stop_prog;
 };
 
 

@@ -1,5 +1,13 @@
 #include "img2mov.hpp"
 
+
+img2mov *program = nullptr;
+
+void control_Handler(int sig) {
+    if(program != nullptr) program->stop();
+    std::cout << "\nimg2mov: Signal caught stopping...\n";
+}
+
 int main(int argc, char **argv) {
     if(argc > 1) {
         int opt;
@@ -42,8 +50,19 @@ int main(int argc, char **argv) {
             std::cerr << argv[0] << " -i directory -o video -w width -h height -f fps\n";
             exit(EXIT_FAILURE);
         }
-        img2mov program(dir_name, file_name,fps,width,height,stretch);
-        program.run();
+        
+        struct sigaction sa;
+        sigemptyset(&sa.sa_mask);
+        sa.sa_flags = 0;
+        sa.sa_handler = control_Handler;
+        if(sigaction(SIGINT, &sa, 0) == -1) {
+            std::cerr << "Error on sigaction:\n";
+            exit(EXIT_FAILURE);
+        }
+        std::cout << "img2mov: Press Ctrl+C to stop processing...\n";
+        program = new img2mov(dir_name, file_name,fps,width,height,stretch);
+        program->run();
+        delete program;
     } else {
         std::cerr << "Requires input/output flags..\n";
         std::cerr << argv[0] << " -i directory -o video\n";

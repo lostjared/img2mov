@@ -1,6 +1,7 @@
 #include "img2mov.hpp"
 
 void img2mov::run() {
+    stop_prog = false;
     std::vector<std::string> files_v;
     add_directory(dirn, files_v);
     if(files_v.size() == 0) {
@@ -18,6 +19,9 @@ void img2mov::run() {
     
     unsigned int frame_count = 0;
     for(unsigned int i = 0; i < files_v.size(); ++i) {
+        
+        if(stop_prog == true) break;
+        
         cv::Mat frame;
         frame = cv::imread(files_v[i]);
         if(frame.empty()) {
@@ -50,7 +54,11 @@ void img2mov::run() {
         ++frame_count;
     }
     writer.release();
-    std::cout << "Wrote: " << frame_count << " frames at fps: " << fps << "\n";
+    std::cout << "Wrote: " << filen << " " << frame_count << " frames at fps: " << fps << "\n";
+}
+
+void img2mov::stop() {
+    stop_prog = true;
 }
 
 void img2mov::add_directory(std::string path, std::vector<std::string> &files) {
