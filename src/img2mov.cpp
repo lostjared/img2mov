@@ -40,7 +40,13 @@ void img2mov::run() {
             image = resizeKeepAspectRatio(frame, cv::Size(w, h), cv::Scalar(0,0,0));
         }
         writer.write(image);
-        std::cout << "Wrote frame: " << files_v[i] << " [" << frame_count << "/" << files_v.size() << "]\n";
+        float val = i;
+        float size = files_v.size();
+        float percent_complete = 0;
+        if(size != 0)
+            percent_complete = (val/size)*100;
+        
+        std::cout << "Wrote frame: " << percent_complete << "% - " << files_v[i] << " [" << frame_count << "/" << files_v.size() << "]\n";
         ++frame_count;
     }
     writer.release();
