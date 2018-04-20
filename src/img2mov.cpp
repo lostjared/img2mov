@@ -99,7 +99,7 @@ cv::Mat img2mov::resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dst
     return output;
 }
 
-std::string toLower(const std::string &text) {
+std::string img2mov::toLower(const std::string &text) {
     std::string temp;
     for(unsigned int i = 0; i < text.length(); ++i) {
         temp += tolower(text[i]);

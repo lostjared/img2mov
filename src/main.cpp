@@ -63,7 +63,7 @@ int main(int argc, char **argv) {
             std::cerr << "img2mov: Error on sigaction:\n";
             exit(EXIT_FAILURE);
         }
-        if(toLower(file_name).find("mov") == std::string::npos)
+        if(img2mov::toLower(file_name).find("mov") == std::string::npos)
             file_name += ".mov";
         std::cout << "img2mov: Press Ctrl+C to stop processing...\n";
         program.reset(new img2mov(dir_name, file_name,fps,width,height,stretch, no_sort));
