@@ -5,30 +5,29 @@ void img2mov::run() {
     std::vector<std::string> files_v;
     add_directory(dirn, files_v);
     if(files_v.size() == 0) {
-        std::cerr << "No files found...\n";
+        std::cerr << "img2mov: No files found...\n";
         exit(0);
     }
-    std::sort(files_v.begin(), files_v.end());
+    if(no_sort == false)
+        std::sort(files_v.begin(), files_v.end());
+    
     cv::VideoWriter writer;
     writer.open(filen, CV_FOURCC('m', 'p', '4', 'v'), fps, cv::Size(w, h), true);
     
     if(!writer.isOpened()) {
-        std::cout << "Failed to open file...\n";
+        std::cout << "img2mov: Failed to open file...\n";
         exit(EXIT_FAILURE);
     }
     
     unsigned int frame_count = 0;
     for(unsigned int i = 0; i < files_v.size(); ++i) {
-        
         if(stop_prog == true) break;
-        
         cv::Mat frame;
         frame = cv::imread(files_v[i]);
         if(frame.empty()) {
-            std::cerr << "frame: " << i << " unable to failed to load...\n";
+            std::cerr << "img2mov: frame: " << i << " unable to failed to load...\n";
             continue;
         }
-        
         cv::Mat image;
         if(stretch_image) {
             image.create(cvSize(w, h), CV_8UC3);
@@ -50,11 +49,11 @@ void img2mov::run() {
         if(size != 0)
             percent_complete = (val/size)*100;
         
-        std::cout << "Wrote frame: " << percent_complete << "% - " << files_v[i] << " [" << frame_count << "/" << files_v.size() << "]\n";
+        std::cout << "img2mov: Wrote frame " << percent_complete << "% - " << files_v[i] << " [" << frame_count << "/" << files_v.size() << "]\n";
         ++frame_count;
     }
     writer.release();
-    std::cout << "Wrote: " << filen << " " << frame_count << " frames at fps: " << fps << "\n";
+    std::cout << "img2mov: Wrote " << filen << " " << frame_count << " frames at fps: " << fps << "\n";
 }
 
 void img2mov::stop() {
@@ -64,7 +63,7 @@ void img2mov::stop() {
 void img2mov::add_directory(std::string path, std::vector<std::string> &files) {
     DIR *dir = opendir(path.c_str());
     if(dir == NULL) {
-        std::cerr << "Error could not open directory: " << path << "\n";
+        std::cerr << "img2mov: Error could not open directory: " << path << "\n";
         return;
     }
     dirent *file_info;
@@ -90,15 +89,7 @@ void img2mov::add_directory(std::string path, std::vector<std::string> &files) {
     closedir(dir);
 }
 
-std::string toLower(const std::string &text) {
-    std::string temp;
-    for(unsigned int i = 0; i < text.length(); ++i) {
-        temp += tolower(text[i]);
-    }
-    return temp;
-}
-
-cv::Mat resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dstSize, const cv::Scalar &bgcolor)
+cv::Mat img2mov::resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dstSize, const cv::Scalar &bgcolor)
 {
     cv::Mat output;
     double h1 = dstSize.width * (input.rows/(double)input.cols);
@@ -116,4 +107,11 @@ cv::Mat resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dstSize, con
     return output;
 }
 
+std::string toLower(const std::string &text) {
+    std::string temp;
+    for(unsigned int i = 0; i < text.length(); ++i) {
+        temp += tolower(text[i]);
+    }
+    return temp;
+}
 
