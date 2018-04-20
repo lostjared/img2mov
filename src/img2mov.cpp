@@ -29,12 +29,11 @@ void img2mov::run() {
             continue;
         }
         cv::Mat image;
-        if(stretch_image) {
-            image.create(cv::Size(w, h), CV_8UC3);
+        if(stretch_image)
             cv::resize(frame, image, cv::Size(w, h));
-        } else {
+        else
             image = resizeKeepAspectRatio(frame, cv::Size(w, h), cv::Scalar(0,0,0));
-        }
+        
         writer.write(image);
         float val = i;
         float size = files_v.size();
