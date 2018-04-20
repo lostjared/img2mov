@@ -1,10 +1,11 @@
 #include "img2mov.hpp"
+#include<memory>
 
-
-img2mov *program = nullptr;
+std::unique_ptr<img2mov> program;
 
 void control_Handler(int sig) {
-    if(program != nullptr) program->stop();
+    if(program)
+        program->stop();
     std::cout << "\nimg2mov: Signal caught stopping...\n";
 }
 
@@ -61,9 +62,8 @@ int main(int argc, char **argv) {
         if(toLower(file_name).find("mov") == std::string::npos)
             file_name += ".mov";
         std::cout << "img2mov: Press Ctrl+C to stop processing...\n";
-        program = new img2mov(dir_name, file_name,fps,width,height,stretch);
+        program.reset(new img2mov(dir_name, file_name,fps,width,height,stretch));
         program->run();
-        delete program;
     } else {
         std::cerr << "Requires input/output flags..\n";
         std::cerr << argv[0] << " -i directory -o video -f fps -w width -h height\n";
