@@ -30,15 +30,8 @@ void img2mov::run() {
         }
         cv::Mat image;
         if(stretch_image) {
-            image.create(cvSize(w, h), CV_8UC3);
-            for(unsigned int z = 0; z < image.rows; ++z) {
-                for(unsigned int i = 0; i < image.cols; ++i) {
-                    int cX = AC_GetFX(frame.cols, i, image.cols);
-                    int cY = AC_GetFZ(frame.rows, z, image.rows);
-                    cv::Vec3b &pixel = image.at<cv::Vec3b>(z, i);
-                    pixel = frame.at<cv::Vec3b>(cY, cX);
-                }
-            }
+            image.create(cv::Size(w, h), CV_8UC3);
+            cv::resize(frame, image, cv::Size(w, h));
         } else {
             image = resizeKeepAspectRatio(frame, cv::Size(w, h), cv::Scalar(0,0,0));
         }
@@ -95,15 +88,15 @@ cv::Mat img2mov::resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dst
     double h1 = dstSize.width * (input.rows/(double)input.cols);
     double w2 = dstSize.height * (input.cols/(double)input.rows);
     if( h1 <= dstSize.height) {
-        cv::resize( input, output, cv::Size(dstSize.width, h1));
+        cv::resize(input, output, cv::Size(dstSize.width, h1));
     } else {
-        cv::resize( input, output, cv::Size(w2, dstSize.height));
+        cv::resize(input, output, cv::Size(w2, dstSize.height));
     }
     int top = (dstSize.height-output.rows) / 2;
     int down = (dstSize.height-output.rows+1) / 2;
     int left = (dstSize.width - output.cols) / 2;
     int right = (dstSize.width - output.cols+1) / 2;
-    cv::copyMakeBorder(output, output, top, down, left, right, cv::BORDER_CONSTANT, bgcolor );
+    cv::copyMakeBorder(output, output, top, down, left, right, cv::BORDER_CONSTANT, bgcolor);
     return output;
 }
 

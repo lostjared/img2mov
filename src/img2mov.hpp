@@ -12,16 +12,6 @@
 #include<sys/types.h>
 #include<sys/stat.h>
 #include<signal.h>
-// Resize X variable
-inline int AC_GetFX(int oldw,int x, int nw) {
-    float xp = (float)x * (float)oldw / (float)nw;
-    return (int)xp;
-}
-// Resize Y Variable
-inline int AC_GetFZ(int oldh, int y, int nh) {
-    float yp = (float)y * (float)oldh / (float)nh;
-    return (int)yp;
-}
 
 std::string toLower(const std::string &text);
 
