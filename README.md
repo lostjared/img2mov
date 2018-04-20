@@ -7,6 +7,7 @@ To compile use
 	$ ./autogen.sh && ./configure && make 
 	
 to use program
+
 	-v print version info
 	-i input directory
 	-o output video file mov
