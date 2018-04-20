@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
         while((opt = getopt(argc, argv, "i:o:w:h:f:sv")) != -1) {
             switch(opt) {
                 case 'v':
-                    std::cout << argv[0] << " written by Jared Bruni\n";
+                    std::cout << argv[0] << " written by Jared Bruni\nhttp://lostsidedead.com\n";
                     exit(EXIT_SUCCESS);
                     break;
                 case 'i':
@@ -50,7 +50,6 @@ int main(int argc, char **argv) {
             std::cerr << argv[0] << " -i directory -o video -w width -h height -f fps\n";
             exit(EXIT_FAILURE);
         }
-        
         struct sigaction sa;
         sigemptyset(&sa.sa_mask);
         sa.sa_flags = 0;
