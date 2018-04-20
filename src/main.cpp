@@ -67,7 +67,7 @@ int main(int argc, char **argv) {
         delete program;
     } else {
         std::cerr << "Requires input/output flags..\n";
-        std::cerr << argv[0] << " -i directory -o video\n";
+        std::cerr << argv[0] << " -i directory -o video -f fps -w width -h height\n";
         exit(EXIT_FAILURE);
     }
     return 0;
