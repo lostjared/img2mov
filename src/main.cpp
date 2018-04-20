@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
         while((opt = getopt(argc, argv, "i:o:w:h:f:svn")) != -1) {
             switch(opt) {
                 case 'v':
-                    std::cout << argv[0] << " written by Jared Bruni\nhttp://lostsidedead.com\n";
+                    std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nhttp://lostsidedead.com\n";
                     exit(EXIT_SUCCESS);
                     break;
                 case 'i':

@@ -1,5 +1,9 @@
 #ifndef __IMG2MOV___H_
 #define __IMG2MOV___H_
+
+
+#define IMG2MOV_VERSION "1.0"
+
 #include<opencv2/opencv.hpp>
 #include<iostream>
 #include<vector>
