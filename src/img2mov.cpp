@@ -3,7 +3,22 @@
 void img2mov::run() {
     stop_prog = false;
     std::vector<std::string> files_v;
-    add_directory(dirn, files_v);
+    if(use_list) {
+        std::fstream file;
+        file.open(text_file, std::ios::in);
+        if(!file.is_open()) {
+            std::cerr << "img2mov: Error could not open text file: " << text_file << "\n";
+            exit(EXIT_FAILURE);
+        }
+        while(!file.eof()) {
+            std::string text;
+            std::getline(file, text);
+            if(file) {
+                files_v.push_back(text);
+            }
+        }
+    } else
+        add_directory(dirn, files_v);
     if(files_v.size() == 0) {
         std::cerr << "img2mov: No files found...\n";
         exit(0);
@@ -46,6 +61,11 @@ void img2mov::run() {
     }
     writer.release();
     std::cout << "img2mov: Wrote " << filen << " " << frame_count << " frames at fps: " << fps << "\n";
+}
+
+void img2mov::setList(const std::string &s) {
+    text_file = s;
+    use_list = true;
 }
 
 void img2mov::stop() {

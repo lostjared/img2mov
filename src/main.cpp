@@ -17,7 +17,9 @@ int main(int argc, char **argv) {
         unsigned int width = 0, height = 0;
         bool no_sort = false;
         bool stretch = false;
-        while((opt = getopt(argc, argv, "i:o:w:h:f:svn")) != -1) {
+        std::string text_file;
+        
+        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:")) != -1) {
             switch(opt) {
                 case 'v':
                     std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nhttp://lostsidedead.com\n";
@@ -38,6 +40,9 @@ int main(int argc, char **argv) {
                 case 'h':
                     height = atoi(optarg);
                     break;
+                case 't':
+                    text_file = optarg;
+                    break;
                 case 's':
                     stretch = true;
                     break;
@@ -50,7 +55,7 @@ int main(int argc, char **argv) {
                     break;
             }
         }
-        if(width == 0  || height == 0 || fps == 0 || dir_name.length() == 0 || file_name.length() == 0) {
+        if(width == 0  || height == 0 || fps == 0 || (dir_name.length() == 0 && text_file.length() == 0) || file_name.length() == 0) {
             std::cerr << "img2mov: Requires input/output flags..\n";
             std::cerr << argv[0] << " -i directory -o video -w width -h height -f fps\n";
             exit(EXIT_FAILURE);
@@ -67,6 +72,9 @@ int main(int argc, char **argv) {
             file_name += ".mov";
         std::cout << "img2mov: Press Ctrl+C to stop processing...\n";
         program.reset(new img2mov(dir_name, file_name,fps,width,height,stretch, no_sort));
+        if(text_file.length() > 0)
+            program->setList(text_file);
+        
         program->run();
     } else {
         std::cerr << "img2mov: Requires input/output flags..\n";
