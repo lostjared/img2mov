@@ -49,7 +49,7 @@ void img2mov::run() {
         cv::Mat frame;
         frame = cv::imread(files_v[i]);
         if(frame.empty()) {
-            std::cerr << "img2mov: frame: " << i << " unable to failed to load...\n";
+            std::cerr << "img2mov: frame: " << i << " unable to load image: " << files_v[i] << "\n";
             continue;
         }
         cv::Mat image;
