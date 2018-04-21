@@ -65,7 +65,7 @@ void img2mov::run() {
         if(size != 0)
             percent_complete = (val/size)*100;
         
-        std::cout << "img2mov: Wrote frame " << std::setprecision(4) << percent_complete << "% - " << files_v[i] << " [" << frame_count+1 << "/" << files_v.size() << "]\n";
+        std::cout << "img2mov: Wrote frame " << static_cast<unsigned int>(percent_complete) << "% - " << files_v[i] << " [" << frame_count+1 << "/" << files_v.size() << "]\n";
         ++frame_count;
     }
     writer.release();
