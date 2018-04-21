@@ -22,5 +22,7 @@ to use program
 example use:
 
 	$ img2mov -i . -o videofile.mov -w 1920 -h 1080 -f 24 
+	
+	$ img2mov -i ~/Movies -o outputfile.mov -w 1280 -h 720 -f 24 -r "jpg$"
 
 	
