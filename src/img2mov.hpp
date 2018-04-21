@@ -16,12 +16,14 @@
 #include<sys/stat.h>
 #include<signal.h>
 #include<fstream>
+#include<regex>
 
 class img2mov {
 public:
     img2mov(std::string d, std::string f, double fps_, unsigned int w_, unsigned int h_, bool stretch_, bool ns) : filen(f), dirn(d), fps(fps_), w(w_), h(h_), stretch_image(stretch_), stop_prog(false), no_sort(ns), use_list(false) {}
     
     void setList(const std::string &s);
+    void setRegEx(const std::string &r);
     void run();
     void add_directory(std::string path, std::vector<std::string> &files);
     void stop();
@@ -34,6 +36,7 @@ private:
     bool stop_prog;
     bool no_sort;
     bool use_list;
+    std::string expr;
     std::string text_file;
     cv::Mat resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dstSize, const cv::Scalar &bgcolor);
 };

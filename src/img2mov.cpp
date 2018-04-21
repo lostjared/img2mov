@@ -14,7 +14,15 @@ void img2mov::run() {
             std::string text;
             std::getline(file, text);
             if(file) {
-                files_v.push_back(text);
+                if(expr.length() > 0) {
+                    std::regex statement(expr);
+                    std::smatch match_;
+                    if(std::regex_search(text,match_,statement)) {
+                        files_v.push_back(text);
+                    }
+                } else {
+                    files_v.push_back(text);
+                }
             }
         }
     } else
@@ -68,6 +76,10 @@ void img2mov::setList(const std::string &s) {
     use_list = true;
 }
 
+void img2mov::setRegEx(const std::string &r) {
+    expr = r;
+}
+
 void img2mov::stop() {
     stop_prog = true;
 }
@@ -93,7 +105,14 @@ void img2mov::add_directory(std::string path, std::vector<std::string> &files) {
             continue;
         }
         if(f_info.length()>0 && f_info[0] != '.') {
-            if(toLower(fullpath).find("png") != std::string::npos || toLower(fullpath).find("jpg") != std::string::npos) {
+            if(expr.length() > 0) {
+                std::regex statement(expr);
+                std::smatch match_;
+                if(std::regex_search(fullpath,match_,statement)) {
+                    files.push_back(fullpath);
+                    std::cout << "added: " << fullpath << "\n";
+                }
+            } else if(toLower(fullpath).find("png") != std::string::npos || toLower(fullpath).find("jpg") != std::string::npos) {
                 files.push_back(fullpath);
             }
         }

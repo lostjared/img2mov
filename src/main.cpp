@@ -18,12 +18,15 @@ int main(int argc, char **argv) {
         bool no_sort = false;
         bool stretch = false;
         std::string text_file;
-        
-        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:")) != -1) {
+        std::string expr;
+        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:")) != -1) {
             switch(opt) {
                 case 'v':
                     std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nhttp://lostsidedead.com\n";
                     exit(EXIT_SUCCESS);
+                    break;
+                case 'r':
+                    expr = optarg;
                     break;
                 case 'i':
                     dir_name = optarg;
@@ -74,6 +77,8 @@ int main(int argc, char **argv) {
         program.reset(new img2mov(dir_name, file_name,fps,width,height,stretch, no_sort));
         if(text_file.length() > 0)
             program->setList(text_file);
+        if(expr.length() > 0)
+            program->setRegEx(expr);
         
         program->run();
     } else {
