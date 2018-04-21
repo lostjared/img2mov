@@ -79,8 +79,12 @@ int main(int argc, char **argv) {
             program->setList(text_file);
         if(expr.length() > 0)
             program->setRegEx(expr);
-        
-        program->run();
+        try {
+            program->run();
+        } catch(std::exception &e) {
+            std::cerr << "Exception: " << e.what() << "\n";
+            exit(EXIT_FAILURE);
+        }
     } else {
         std::cerr << "img2mov: Requires input/output flags..\n";
         std::cerr << argv[0] << " -i directory -o video -f fps -w width -h height\n";
