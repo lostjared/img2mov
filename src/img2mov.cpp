@@ -27,6 +27,7 @@ void img2mov::run() {
         }
     } else
         add_directory(dirn, files_v);
+    
     if(files_v.size() == 0) {
         std::cerr << "img2mov: No files found...\n";
         exit(0);
@@ -59,12 +60,12 @@ void img2mov::run() {
         
         writer.write(image);
         float val = i;
-        float size = files_v.size();
+        float size = files_v.size()-1;
         float percent_complete = 0;
         if(size != 0)
             percent_complete = (val/size)*100;
         
-        std::cout << "img2mov: Wrote frame " << percent_complete << "% - " << files_v[i] << " [" << frame_count << "/" << files_v.size() << "]\n";
+        std::cout << "img2mov: Wrote frame " << std::setprecision(4) << percent_complete << "% - " << files_v[i] << " [" << frame_count << "/" << files_v.size()-1 << "]\n";
         ++frame_count;
     }
     writer.release();

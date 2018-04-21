@@ -17,6 +17,7 @@
 #include<signal.h>
 #include<fstream>
 #include<regex>
+#include<iomanip>
 
 class img2mov {
 public:
