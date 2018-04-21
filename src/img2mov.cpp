@@ -59,13 +59,13 @@ void img2mov::run() {
             image = resizeKeepAspectRatio(frame, cv::Size(w, h), cv::Scalar(0,0,0));
         
         writer.write(image);
-        float val = i;
-        float size = files_v.size()-1;
+        float val = i+1;
+        float size = files_v.size();
         float percent_complete = 0;
         if(size != 0)
             percent_complete = (val/size)*100;
         
-        std::cout << "img2mov: Wrote frame " << std::setprecision(4) << percent_complete << "% - " << files_v[i] << " [" << frame_count << "/" << files_v.size()-1 << "]\n";
+        std::cout << "img2mov: Wrote frame " << std::setprecision(4) << percent_complete << "% - " << files_v[i] << " [" << frame_count+1 << "/" << files_v.size() << "]\n";
         ++frame_count;
     }
     writer.release();
