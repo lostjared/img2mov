@@ -4,9 +4,10 @@
 std::unique_ptr<img2mov> program;
 
 void control_Handler(int sig) {
-    if(program)
+    if(program) {
         program->stop();
-    std::cout << "\nimg2mov: Signal caught stopping...\n";
+        std::cout << "\n" << program->name() << ": Signal caught stopping...\n";
+    }
 }
 
 void printInfo(const char *program) {
@@ -80,7 +81,7 @@ int main(int argc, char **argv) {
             if(img2mov::toLower(file_name).find("mov") == std::string::npos)
                 file_name += ".mov";
             std::cout << argv[0] << ": Press Ctrl+C to stop processing...\n";
-            program.reset(new img2mov(dir_name, file_name,fps,width,height,stretch, no_sort));
+            program.reset(new img2mov(argv[0], dir_name, file_name,fps,width,height,stretch, no_sort));
             if(text_file.length() > 0)
                 program->setList(text_file);
             if(expr.length() > 0)

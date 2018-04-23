@@ -1,5 +1,9 @@
 #include "img2mov.hpp"
 
+const std::string img2mov::name() const {
+    return program_name;
+}
+
 void img2mov::run() {
     stop_prog = false;
     std::vector<std::string> files_v;
@@ -7,7 +11,7 @@ void img2mov::run() {
         std::fstream file;
         file.open(text_file, std::ios::in);
         if(!file.is_open()) {
-            std::cerr << "img2mov: Error could not open text file: " << text_file << "\n";
+            std::cerr << name() << ": Error could not open text file: " << text_file << "\n";
             exit(EXIT_FAILURE);
         }
         while(!file.eof()) {
@@ -29,7 +33,7 @@ void img2mov::run() {
         add_directory(dirn, files_v);
     
     if(files_v.size() == 0) {
-        std::cerr << "img2mov: No files found...\n";
+        std::cerr << name() << ": No files found...\n";
         exit(0);
     }
     if(no_sort == false)
@@ -39,7 +43,7 @@ void img2mov::run() {
     writer.open(filen, CV_FOURCC('m', 'p', '4', 'v'), fps, cv::Size(w, h), true);
     
     if(!writer.isOpened()) {
-        std::cout << "img2mov: Failed to open file...\n";
+        std::cout << name() << ": Failed to open file...\n";
         exit(EXIT_FAILURE);
     }
     
@@ -49,7 +53,7 @@ void img2mov::run() {
         cv::Mat frame;
         frame = cv::imread(files_v[i]);
         if(frame.empty()) {
-            std::cerr << "img2mov: frame: " << i << " unable to load image: " << files_v[i] << "\n";
+            std::cerr << name() << ": frame: " << i << " unable to load image: " << files_v[i] << "\n";
             continue;
         }
         cv::Mat image;
@@ -68,11 +72,11 @@ void img2mov::run() {
         struct stat buf;
         lstat(filen.c_str(), &buf);
         
-        std::cout << "img2mov: Wrote Frame File Size: " << ((buf.st_size/1024)/1024) << " MB - " << static_cast<unsigned int>(percent_complete) << "% - " << files_v[i] << " [" << frame_count+1 << "/" << files_v.size() << "]\n";;
+        std::cout << name() << ": Wrote Frame File Size: " << ((buf.st_size/1024)/1024) << " MB - " << static_cast<unsigned int>(percent_complete) << "% - " << files_v[i] << " [" << frame_count+1 << "/" << files_v.size() << "]\n";;
         ++frame_count;
     }
     writer.release();
-    std::cout << "img2mov: Wrote " << filen << " " << frame_count << " frames at fps: " << fps << "\n";
+    std::cout << name() << ": Wrote " << filen << " " << frame_count << " frames at fps: " << fps << "\n";
 }
 
 void img2mov::setList(const std::string &s) {
@@ -91,7 +95,7 @@ void img2mov::stop() {
 void img2mov::add_directory(std::string path, std::vector<std::string> &files) {
     DIR *dir = opendir(path.c_str());
     if(dir == NULL) {
-        std::cerr << "img2mov: Error could not open directory: " << path << "\n";
+        std::cerr << name() << ": Error could not open directory: " << path << "\n";
         return;
     }
     dirent *file_info;
