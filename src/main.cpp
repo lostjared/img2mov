@@ -10,17 +10,7 @@ void control_Handler(int sig) {
 }
 
 void printInfo() {
-    std::cout << "To use: img2mov\n" <<
-    "\t-v print version info\n" <<
-    "\t-i input directory\n" <<
-    "\t-r \"match with regular expression\"\n" <<
-    "\t-t input file list in text file\n" <<
-    "\t-o output video file mov\n" <<
-    "\t-w frame width\n" <<
-    "\t-h frame height\n" <<
-    "\t-f frames per second\n" <<
-    "\t-s stretch image (if not set will resize to keep aspect ratio)\n" <<
-    "\t-n do not sort list of files..\n";
+    std::cout << "To use: img2mov\n\t-v print version info\n\t-i input directory\n\t-r \"match with regular expression\"\n\t-t input file list in text file\n\t-o output video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n";
 }
 
 int main(int argc, char **argv) {
