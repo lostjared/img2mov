@@ -10,7 +10,8 @@ to use program
 
 	-v print version info
 	-i input directory
-	-r "match with regular expression""
+	-r "search with regular expression"
+	-m "match with regular expression"
 	-t input file list in text file
 	-o output video file mov
 	-w frame width

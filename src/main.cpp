@@ -11,7 +11,7 @@ void control_Handler(int sig) {
 }
 
 void printInfo(const char *program) {
-    std::cout << "To use: " << program << "\n\t-v print version info\n\t-i input directory\n\t-r \"match with regular expression\"\n\t-t input file list in text file\n\t-o output video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n";
+    std::cout << "To use: " << program << "\n\t-v print version info\n\t-i input directory\n\t-r \"search with regular expression\"\n\t-m \"match with regular expression\"\n\t-t input file list in text file\n\t-o output video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n";
 }
 
 int main(int argc, char **argv) {
@@ -24,7 +24,8 @@ int main(int argc, char **argv) {
         bool stretch = false;
         std::string text_file;
         std::string expr;
-        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:")) != -1) {
+        std::string match_str;
+        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:m:")) != -1) {
             switch(opt) {
                 case 'v':
                     std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nhttp://lostsidedead.com\n";
@@ -57,6 +58,9 @@ int main(int argc, char **argv) {
                 case 'n':
                     no_sort = true;
                     break;
+                case 'm':
+                    match_str = optarg;
+                    break;
                 default:
                     std::cout << argv[0] << ": invalid option...\n";
                     printInfo(argv[0]);
@@ -86,6 +90,8 @@ int main(int argc, char **argv) {
                 program->setList(text_file);
             if(expr.length() > 0)
                 program->setRegEx(expr);
+            if(match_str.length() > 0)
+                program->setRegExMatch(match_str);
             
             program->run();
         } catch(std::exception &e) {
