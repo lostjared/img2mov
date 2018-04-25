@@ -1,7 +1,7 @@
 #include "img2mov.hpp"
 #include<memory>
 
-std::unique_ptr<img2mov> program;
+std::unique_ptr<image_tool::img2mov> program;
 
 void control_Handler(int sig) {
     if(program) {
@@ -82,7 +82,7 @@ int main(int argc, char **argv) {
                 std::cout << argv[0] << ": output list mode requires -i -r or -m arguments.\n";
                 exit(EXIT_FAILURE);
             } else if((output_text == true && dir_name.length() > 0) && (expr.length() > 0 || match_str.length()>0)) {
-                program.reset(new img2mov(argv[0], dir_name));
+                program.reset(new image_tool::img2mov(argv[0], dir_name));
                 program->setOutputList(output_text_name);
                 program->setRegEx(expr);
                 program->setRegExMatch(match_str);
@@ -100,10 +100,10 @@ int main(int argc, char **argv) {
                     std::cerr << argv[0] << ": Error on sigaction:\n";
                     exit(EXIT_FAILURE);
                 }
-                if(img2mov::toLower(file_name).find("mov") == std::string::npos)
+                if(image_tool::img2mov::toLower(file_name).find("mov") == std::string::npos)
                     file_name += ".mov";
                 std::cout << argv[0] << ": Press Ctrl+C to stop processing...\n";
-                program.reset(new img2mov(argv[0], dir_name, file_name,fps,width,height,stretch, no_sort));
+                program.reset(new image_tool::img2mov(argv[0], dir_name, file_name,fps,width,height,stretch, no_sort));
                 if(text_file.length() > 0)
                     program->setList(text_file);
                 if(expr.length() > 0)
