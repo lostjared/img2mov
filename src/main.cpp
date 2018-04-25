@@ -75,7 +75,6 @@ int main(int argc, char **argv) {
             }
         }
         try {
-            
             if(output_text == false && dir_name.length() == 0 && text_file.length() == 0) {
                 std::cerr << argv[0] << ": Requires either directory -i or text file -t or file output mode -l\n";
                 exit(EXIT_FAILURE);
@@ -105,9 +104,6 @@ int main(int argc, char **argv) {
                     file_name += ".mov";
                 std::cout << argv[0] << ": Press Ctrl+C to stop processing...\n";
                 program.reset(new img2mov(argv[0], dir_name, file_name,fps,width,height,stretch, no_sort));
-                
-                
-                
                 if(text_file.length() > 0)
                     program->setList(text_file);
                 if(expr.length() > 0)
