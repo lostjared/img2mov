@@ -4,6 +4,28 @@ const std::string img2mov::name() const {
     return program_name;
 }
 
+void img2mov::output() {
+    
+    if(output_list == false) {
+        std::cerr << name() << ": requires flag to be set...\n";
+        exit(EXIT_FAILURE);
+    }
+    
+    std::vector<std::string> output_files;
+    add_directory(dirn,output_files);
+    if(output_files.size()==0) {
+        std::cout << name() << ": No files found...\n";
+    } else {
+        std::fstream f;
+        f.open(output_list_name, std::ios::out);
+        for(unsigned int i = 0; i < output_files.size(); ++i) {
+            f << output_files[i] << "\n";
+        }
+        f.close();
+        std::cout << name() << ": outputted to file: " << output_list_name << "\n";
+    }
+}
+
 void img2mov::run() {
     stop_prog = false;
     std::vector<std::string> files_v;
@@ -85,6 +107,11 @@ void img2mov::run() {
     }
     writer.release();
     std::cout << name() << ": Wrote " << filen << " " << frame_count << " frames at fps: " << fps << "\n";
+}
+
+void img2mov::setOutputList(const std::string &s) {
+    output_list_name = s;
+    output_list = true;
 }
 
 void img2mov::setList(const std::string &s) {
