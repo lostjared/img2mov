@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
         while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:m:l:")) != -1) {
             switch(opt) {
                 case 'v':
-                    std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nhttp://lostsidedead.com\n";
+                    std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nsite: http://lostsidedead.com\nemail: lostjared@lostsidedead.com\n";
                     exit(EXIT_SUCCESS);
                     break;
                 case 'r':
@@ -84,7 +84,7 @@ int main(int argc, char **argv) {
                 printInfo(argv[0]);
                 exit(EXIT_FAILURE);
             } else if((output_text == true && dir_name.length() > 0) && (expr.length() > 0 || match_str.length()>0)) {
-                program.reset(new video_tool::img2mov(argv[0], dir_name));
+                program.reset(new video_tool::img2mov(argv[0], dir_name, no_sort));
                 program->setOutputList(output_text_name);
                 program->setRegEx(expr);
                 program->setRegExMatch(match_str);
