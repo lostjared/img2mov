@@ -8,6 +8,9 @@
 #include<vector>
 #include<string>
 #include<algorithm>
+#include<fstream>
+#include<regex>
+#include<iomanip>
 #include<cctype>
 #include<cstdlib>
 #include<unistd.h>
@@ -15,11 +18,8 @@
 #include<sys/types.h>
 #include<sys/stat.h>
 #include<signal.h>
-#include<fstream>
-#include<regex>
-#include<iomanip>
 
-namespace image_tool {
+namespace video_tool {
     
     class img2mov {
     public:

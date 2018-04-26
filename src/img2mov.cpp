@@ -1,6 +1,6 @@
 #include "img2mov.hpp"
 
-namespace image_tool {
+namespace video_tool {
     
     const std::string img2mov::name() const {
         return program_name;
