@@ -30,7 +30,7 @@ namespace video_tool {
         void setRegExMatch(const std::string &m);
         void run();
         void output();
-        void add_directory(std::string path, std::vector<std::string> &files);
+        void addDirectory(std::string path, std::vector<std::string> &files);
         void stop();
         static std::string toLower(const std::string &text);
         const std::string name() const;

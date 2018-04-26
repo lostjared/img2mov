@@ -13,7 +13,7 @@ namespace video_tool {
         }
         std::cout << "Search Mode: [" << searchMode() << "]\n";
         std::vector<std::string> output_files;
-        add_directory(dirn,output_files);
+        addDirectory(dirn,output_files);
         if(output_files.size()==0) {
             std::cout << name() << ": No files found...\n";
         } else {
@@ -59,7 +59,7 @@ namespace video_tool {
                 }
             }
         } else
-            add_directory(dirn, files_v);
+            addDirectory(dirn, files_v);
         
         if(files_v.size() == 0) {
             std::cerr << name() << ": No files found...\n";
@@ -135,7 +135,7 @@ namespace video_tool {
         return "png/jpg search";
     }
     
-    void img2mov::add_directory(std::string path, std::vector<std::string> &files) {
+    void img2mov::addDirectory(std::string path, std::vector<std::string> &files) {
         DIR *dir = opendir(path.c_str());
         if(dir == NULL) {
             std::cerr << name() << ": Error could not open directory: " << path << "\n";
@@ -151,7 +151,7 @@ namespace video_tool {
             lstat(fullpath.c_str(), &s);
             if(S_ISDIR(s.st_mode)) {
                 if(f_info.length()>0 && f_info[0] != '.')
-                    add_directory(path+"/"+f_info, files);
+                    addDirectory(path+"/"+f_info, files);
                 continue;
             }
             if(f_info.length()>0 && f_info[0] != '.') {
