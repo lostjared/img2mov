@@ -1,3 +1,13 @@
+/*
+ 
+ img2mov - creates video files from images
+ written by Jared Bruni
+ 
+ (C) 2018 by Jared Bruni
+ License: GPL v3
+ 
+ */
+
 #include "img2mov.hpp"
 #include<memory>
 
