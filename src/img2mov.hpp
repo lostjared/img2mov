@@ -20,12 +20,10 @@
 #include<signal.h>
 
 namespace video_tool {
-    
     class img2mov {
     public:
         img2mov(std::string name, std::string d) : program_name(name), dirn(d) {}
         img2mov(std::string name, std::string d, std::string f, double fps_, unsigned int w_, unsigned int h_, bool stretch_, bool ns) : program_name(name), filen(f), dirn(d), fps(fps_), w(w_), h(h_), stretch_image(stretch_), stop_prog(false), no_sort(ns), use_list(false), output_list(false) {}
-        
         void setOutputList(const std::string &s);
         void setList(const std::string &s);
         void setRegEx(const std::string &r);

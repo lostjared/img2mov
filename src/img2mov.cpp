@@ -90,17 +90,14 @@ namespace video_tool {
                 cv::resize(frame, image, cv::Size(w, h));
             else
                 image = resizeKeepAspectRatio(frame, cv::Size(w, h), cv::Scalar(0,0,0));
-            
             writer.write(image);
             float val = i+1;
             float size = files_v.size();
             float percent_complete = 0;
             if(size != 0)
                 percent_complete = (val/size)*100;
-            
             struct stat buf;
             lstat(filen.c_str(), &buf);
-            
             std::cout << name() << ": Wrote Frame File Size: " << ((buf.st_size/1024)/1024) << " MB - " << static_cast<unsigned int>(percent_complete) << "% - " << files_v[i] << " [" << frame_count+1 << "/" << files_v.size() << "]\n";;
             ++frame_count;
         }
@@ -155,7 +152,6 @@ namespace video_tool {
             if(S_ISDIR(s.st_mode)) {
                 if(f_info.length()>0 && f_info[0] != '.')
                     add_directory(path+"/"+f_info, files);
-                
                 continue;
             }
             if(f_info.length()>0 && f_info[0] != '.') {
@@ -178,16 +174,14 @@ namespace video_tool {
         closedir(dir);
     }
     
-    cv::Mat img2mov::resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dstSize, const cv::Scalar &bgcolor)
-    {
+    cv::Mat img2mov::resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dstSize, const cv::Scalar &bgcolor) {
         cv::Mat output;
         double h1 = dstSize.width * (input.rows/(double)input.cols);
         double w2 = dstSize.height * (input.cols/(double)input.rows);
-        if(h1 <= dstSize.height) {
+        if(h1 <= dstSize.height)
             cv::resize(input, output, cv::Size(dstSize.width, h1));
-        } else {
+        else
             cv::resize(input, output, cv::Size(w2, dstSize.height));
-        }
         int top = (dstSize.height-output.rows)/2;
         int down = (dstSize.height-output.rows+1)/2;
         int left = (dstSize.width - output.cols)/2;
