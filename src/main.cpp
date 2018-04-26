@@ -77,9 +77,11 @@ int main(int argc, char **argv) {
         try {
             if(output_text == false && dir_name.length() == 0 && text_file.length() == 0) {
                 std::cerr << argv[0] << ": Requires either directory -i or text file -t or file output mode -l\n";
+                printInfo(argv[0]);
                 exit(EXIT_FAILURE);
             } else if((output_text == true && expr.length()==0 && match_str.length()==0)) {
                 std::cout << argv[0] << ": output list mode requires -i -r or -m arguments.\n";
+                printInfo(argv[0]);
                 exit(EXIT_FAILURE);
             } else if((output_text == true && dir_name.length() > 0) && (expr.length() > 0 || match_str.length()>0)) {
                 program.reset(new video_tool::img2mov(argv[0], dir_name));
@@ -114,6 +116,9 @@ int main(int argc, char **argv) {
             }
         } catch(std::exception &e) {
             std::cerr << argv[0] << ": Exception: " << e.what() << "\n";
+            exit(EXIT_FAILURE);
+        } catch(...) {
+            std::cerr << argv[0] << ": Error unknown exception...\n";
             exit(EXIT_FAILURE);
         }
     } else {
