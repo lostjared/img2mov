@@ -21,17 +21,17 @@ namespace video_tool {
             std::cerr << name() << ": requires flag to be set...\n";
             exit(EXIT_FAILURE);
         }
-        std::cout << name() << ": Search Mode: [" << searchMode() << "]\n";
+        if(quiet == false) std::cout << name() << ": Search Mode: [" << searchMode() << "]\n";
         std::vector<std::string> output_files;
         addDirectory(dirn,output_files);
         if(output_files.size()==0) {
             std::cout << name() << ": No files found...\n";
         } else {
             if(no_sort == false) {
-                std::cout << name() << ": sorting list...\n";
+                if(quiet == false) std::cout << name() << ": sorting list...\n";
                 std::sort(output_files.begin(), output_files.end());
             } else
-                std::cout << name() << ": not sorting list...\n";
+                if(quiet == false) std::cout << name() << ": not sorting list...\n";
 
             std::fstream f;
             f.open(output_list_name, std::ios::out);
@@ -46,7 +46,7 @@ namespace video_tool {
     void img2mov::run() {
         stop_prog = false;
         std::vector<std::string> files_v;
-        std::cout << name() << ": Search Mode: [" << searchMode() << "]\n";
+        if(quiet == false) std::cout << name() << ": Search Mode: [" << searchMode() << "]\n";
         if(use_list) {
             std::fstream file;
             file.open(text_file, std::ios::in);
@@ -82,10 +82,10 @@ namespace video_tool {
             exit(0);
         }
         if(no_sort == false) {
-            std::cout << name() << ": sorting list...\n";
+            if(quiet == false) std::cout << name() << ": sorting list...\n";
             std::sort(files_v.begin(), files_v.end());
         } else
-            std::cout << name() << ": not sorting list...\n";
+            if(quiet == false) std::cout << name() << ": not sorting list...\n";
 
         
         cv::VideoWriter writer;
