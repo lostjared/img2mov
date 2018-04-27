@@ -21,7 +21,7 @@ void control_Handler(int sig) {
 }
 
 void printInfo(const char *program) {
-    std::cout << "To use: " << program << "\n\t-v print version info\n\t-i input directory\n\t-l output filename\n\t-r \"search with regular expression\"\n\t-m \"match with regular expression\"\n\t-t input file list in text file\n\t-o output video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n\t-q quiet mode\n";
+    std::cout << "To use: " << program << "\n\t-v print version info\n\t-i input directory\n\t-l filename.txt (list textfile)\n\t-r \"search with regular expression\"\n\t-m \"match with regular expression\"\n\t-t input file list in text file\n\t-o omakeutput video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n\t-q quiet mode\n";
 }
 
 int main(int argc, char **argv) {
