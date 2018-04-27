@@ -20,6 +20,7 @@ to use program
 	-f frames per second
 	-s stretch image (if not set will resize to keep aspect ratio)
 	-n do not sort list of files
+	-q quiet mode
 	
 example use:
 

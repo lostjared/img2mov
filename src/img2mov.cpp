@@ -96,6 +96,8 @@ namespace video_tool {
             exit(EXIT_FAILURE);
         }
         
+        std::cout << name() << ": now creating video file...\n";
+        
         unsigned int frame_count = 0;
         for(unsigned int i = 0; i < files_v.size(); ++i) {
             if(stop_prog == true) break;
@@ -118,7 +120,7 @@ namespace video_tool {
                 percent_complete = (val/size)*100;
             struct stat buf;
             lstat(filen.c_str(), &buf);
-            std::cout << name() << ": Wrote Frame File Size: " << ((buf.st_size/1024)/1024) << " MB - " << static_cast<unsigned int>(percent_complete) << "% - " << files_v[i] << " [" << frame_count+1 << "/" << files_v.size() << "]\n";;
+            if(quiet == false) std::cout << name() << ": Wrote Frame File Size: " << ((buf.st_size/1024)/1024) << " MB - " << static_cast<unsigned int>(percent_complete) << "% - " << files_v[i] << " [" << frame_count+1 << "/" << files_v.size() << "]\n";;
             ++frame_count;
         }
         writer.release();
@@ -141,6 +143,10 @@ namespace video_tool {
     
     void img2mov::setRegExMatch(const std::string &m) {
         match_expr = m;
+    }
+    
+    void img2mov::setQuiet(bool q) {
+        quiet = q;
     }
     
     void img2mov::stop() {

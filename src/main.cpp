@@ -21,7 +21,7 @@ void control_Handler(int sig) {
 }
 
 void printInfo(const char *program) {
-    std::cout << "To use: " << program << "\n\t-v print version info\n\t-i input directory\n\t-l output filename\n\t-r \"search with regular expression\"\n\t-m \"match with regular expression\"\n\t-t input file list in text file\n\t-o output video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n";
+    std::cout << "To use: " << program << "\n\t-v print version info\n\t-i input directory\n\t-l output filename\n\t-r \"search with regular expression\"\n\t-m \"match with regular expression\"\n\t-t input file list in text file\n\t-o output video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n\t-q quiet mode\n";
 }
 
 int main(int argc, char **argv) {
@@ -33,11 +33,12 @@ int main(int argc, char **argv) {
         bool no_sort = false;
         bool stretch = false;
         bool output_text = false;
+        bool quiet = false;
         std::string output_text_name;
         std::string text_file;
         std::string expr;
         std::string match_str;
-        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:m:l:")) != -1) {
+        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:m:l:q")) != -1) {
             switch(opt) {
                 case 'v':
                     std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nsite: http://lostsidedead.com\nemail: lostjared@lostsidedead.com\n";
@@ -77,6 +78,9 @@ int main(int argc, char **argv) {
                 case 'm':
                     match_str = optarg;
                     break;
+                case 'q':
+                    quiet = true;
+                    break;
                 default:
                     std::cout << argv[0] << ": invalid option...\n";
                     printInfo(argv[0]);
@@ -98,6 +102,7 @@ int main(int argc, char **argv) {
                 program->setOutputList(output_text_name);
                 program->setRegEx(expr);
                 program->setRegExMatch(match_str);
+                program->setQuiet(quiet);
                 program->output();
             } else if(width == 0  || height == 0 || fps == 0 || (dir_name.length() == 0 && text_file.length() == 0) || file_name.length() == 0) {
                 std::cerr << argv[0] << ": Requires input/output flags..\n";
@@ -122,6 +127,8 @@ int main(int argc, char **argv) {
                     program->setRegEx(expr);
                 if(match_str.length() > 0)
                     program->setRegExMatch(match_str);
+            
+                program->setQuiet(quiet);
                 program->run();
             }
         } catch(std::exception &e) {

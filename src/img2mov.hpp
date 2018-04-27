@@ -32,12 +32,13 @@
 namespace video_tool {
     class img2mov {
     public:
-        img2mov(std::string name, std::string d, bool sort_list) : program_name(name), dirn(d), no_sort(sort_list) {}
-        img2mov(std::string name, std::string d, std::string f, double fps_, unsigned int w_, unsigned int h_, bool stretch_, bool ns) : program_name(name), filen(f), dirn(d), fps(fps_), w(w_), h(h_), stretch_image(stretch_), stop_prog(false), no_sort(ns), use_list(false), output_list(false) {}
+        img2mov(std::string name, std::string d, bool sort_list) : program_name(name), dirn(d), no_sort(sort_list), quiet(false) {}
+        img2mov(std::string name, std::string d, std::string f, double fps_, unsigned int w_, unsigned int h_, bool stretch_, bool ns) : program_name(name), filen(f), dirn(d), fps(fps_), w(w_), h(h_), stretch_image(stretch_), stop_prog(false), no_sort(ns), use_list(false), output_list(false), quiet(false) {}
         void setOutputList(const std::string &s);
         void setList(const std::string &s);
         void setRegEx(const std::string &r);
         void setRegExMatch(const std::string &m);
+        void setQuiet(bool q);
         void run();
         void output();
         void addDirectory(std::string path, std::vector<std::string> &files);
@@ -54,6 +55,7 @@ namespace video_tool {
         bool no_sort;
         bool use_list;
         bool output_list;
+        bool quiet;
         std::string output_list_name;
         std::string expr, match_expr;
         std::string text_file;
