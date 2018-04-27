@@ -1,6 +1,10 @@
 # img2mov
 
-Requires: OpenCV
+Requires: OpenCV Development Files
+
+In Debian/Ubuntu use:
+
+	$ sudo apt-get install libopencv-dev
 
 To compile use
 
@@ -30,4 +34,6 @@ example use:
 
 	$ img2mov -i ~/Movies -l file_list.txt -r "jpg$"
 
+	$ img2mov -i . -l output_text.txt -r "jpg$"
+	$ img2mov -t output_text.txt -f 24 -w 640 -h 360 
 
