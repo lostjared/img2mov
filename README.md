@@ -2,6 +2,11 @@
 
 Requires: OpenCV Development Files
 
+
+Watch this video tutorial on how to compile/use this program
+
+https://youtu.be/K5FHAqI5RL0
+
 In Debian/Ubuntu use:
 
 	$ sudo apt-get install libopencv-dev
