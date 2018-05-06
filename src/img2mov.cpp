@@ -87,9 +87,11 @@ namespace video_tool {
         } else
             if(quiet == false) std::cout << name() << ": not sorting list...\n";
 
-        
         cv::VideoWriter writer;
-        writer.open(filen, CV_FOURCC('m', 'p', '4', 'v'), fps, cv::Size(w, h), true);
+        if(toLower(filen).find(".avi") != std::string::npos)
+            writer.open(filen, CV_FOURCC('X', 'V', 'I', 'D'), fps, cv::Size(w,h), true);
+        else
+            writer.open(filen, CV_FOURCC('m', 'p', '4', 'v'), fps, cv::Size(w, h), true);
         
         if(!writer.isOpened()) {
             std::cout << name() << ": Failed to open file...\n";
