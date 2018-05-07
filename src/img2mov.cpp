@@ -44,6 +44,10 @@ namespace video_tool {
     }
     
     void img2mov::run() {
+        
+        if(toLower(filen).find(".avi") != std::string::npos) {
+            video_mode = 1;
+        }
         stop_prog = false;
         std::vector<std::string> files_v;
         if(quiet == false) std::cout << name() << ": Search Mode: [" << searchMode() << "]\n";
@@ -88,17 +92,16 @@ namespace video_tool {
             if(quiet == false) std::cout << name() << ": not sorting list...\n";
 
         cv::VideoWriter writer;
-        if(toLower(filen).find(".avi") != std::string::npos)
+        if(video_mode == 1)
             writer.open(filen, CV_FOURCC('X', 'V', 'I', 'D'), fps, cv::Size(w,h), true);
         else
             writer.open(filen, CV_FOURCC('m', 'p', '4', 'v'), fps, cv::Size(w, h), true);
-        
+
         if(!writer.isOpened()) {
             std::cout << name() << ": Failed to open file...\n";
             exit(EXIT_FAILURE);
         }
-        
-        std::cout << name() << ": now creating video file...\n";
+        std::cout << name() << ": Video opened as: " << ((video_mode == 1) ? "XviD" : "MPEG-4") << "\n";
         
         unsigned int frame_count = 0;
         for(unsigned int i = 0; i < files_v.size(); ++i) {
