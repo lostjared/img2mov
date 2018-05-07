@@ -25,7 +25,7 @@ namespace video_tool {
         std::vector<std::string> output_files;
         addDirectory(dirn,output_files);
         if(output_files.size()==0) {
-            std::cout << name() << ": No files found...\n";
+            std::cerr << name() << ": No files found...\n";
         } else {
             if(no_sort == false) {
                 if(quiet == false) std::cout << name() << ": sorting list...\n";
@@ -98,10 +98,10 @@ namespace video_tool {
             writer.open(filen, CV_FOURCC('m', 'p', '4', 'v'), fps, cv::Size(w, h), true);
 
         if(!writer.isOpened()) {
-            std::cout << name() << ": Failed to open file...\n";
+            std::cerr << name() << ": Failed to open file...\n";
             exit(EXIT_FAILURE);
         }
-        std::cout << name() << ": Video opened as: " << ((video_mode == 1) ? "XviD" : "MPEG-4") << "\n";
+        if(quiet == false) std::cout << name() << ": Video opened as: " << ((video_mode == 1) ? "XviD" : "MPEG-4") << "\n";
         
         unsigned int frame_count = 0;
         for(unsigned int i = 0; i < files_v.size(); ++i) {
