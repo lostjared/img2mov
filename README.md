@@ -2,10 +2,11 @@
 
 Requires: OpenCV Development Files
 
-
 Watch this video tutorial on how to compile/use this program
 
 https://youtu.be/K5FHAqI5RL0
+
+This program should be easy to compile, you will just need GCC,OpenCV development files,Autoconf,Automake
 
 In Debian/Ubuntu use:
 
@@ -14,6 +15,10 @@ In Debian/Ubuntu use:
 To compile use
 
 	$ ./autogen.sh && ./configure && make 
+
+	not if your CPU has more than one core use -j with number of cores will speed up compilation. Example if your CPU has 8 cores
+	
+	$ make -j8
 	
 to use program
 
