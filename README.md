@@ -16,7 +16,7 @@ To compile use
 
 	$ ./autogen.sh && ./configure && make 
 
-not if your CPU has more than one core use -j with number of cores will speed up compilation. Example if your CPU has 8 cores
+Note: if your CPU has more than one core use -j with number of cores will speed up compilation. Example if your CPU has 8 cores
 	
 	$ make -j8
 	
