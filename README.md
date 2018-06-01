@@ -35,6 +35,8 @@ to use program
 	-s stretch image (if not set will resize to keep aspect ratio)
 	-n do not sort list of files
 	-q quiet mode
+	-I file for images to be extracted
+	-L file output prefix for file extraction (test1 or ./folder/testl)
 	
 example use:
 
@@ -46,4 +48,8 @@ example use:
 
 	$ img2mov -i . -l output_text.txt -r 'jpg$'
 	$ img2mov -t output_text.txt -f 24 -w 640 -h 360 
+	
+	$ mkdir frames
+	$ img2mov -I test.mp4 -L frames/testprefix
+
 
