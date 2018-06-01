@@ -21,7 +21,7 @@ void control_Handler(int sig) {
 }
 
 void printInfo(const char *program) {
-    std::cout << "To use: " << program << "\n\t-v print version info\n\t-i input directory\n\t-l filename.txt (list textfile)\n\t-r \"search with regular expression\"\n\t-m \"match with regular expression\"\n\t-t input file list in text file\n\t-o omakeutput video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n\t-q quiet mode\n";
+    std::cout << "To use: " << program << "\n\t-v print version info\n\t-i input directory\n\t-l filename.txt (list textfile)\n\t-r \"search with regular expression\"\n\t-m \"match with regular expression\"\n\t-t input file list in text file\n\t-o omakeutput video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n\t-q quiet mode\n\t-I file for images to be extracted\n\t-L file output prefix for file extraction\n";
 }
 
 int main(int argc, char **argv) {
@@ -100,7 +100,7 @@ int main(int argc, char **argv) {
         try {
             
             if(extract_file_name.length() > 0 && extract_images == true) {
-                std::cout << "Extracting Images: ...\n";
+                std::cout << "Extracting Images from: " << extract_file_name << " ...\n";
                 video_tool::img2mov::extractImagesFromFile(extract_file_name, file_prefix);
             } else  if(output_text == false && dir_name.length() == 0 && text_file.length() == 0) {
                 std::cerr << argv[0] << ": Requires either directory -i or text file -t or file output mode -l\n";
