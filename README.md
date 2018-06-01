@@ -16,7 +16,7 @@ To compile use
 
 	$ ./autogen.sh && ./configure && make 
 
-	not if your CPU has more than one core use -j with number of cores will speed up compilation. Example if your CPU has 8 cores
+not if your CPU has more than one core use -j with number of cores will speed up compilation. Example if your CPU has 8 cores
 	
 	$ make -j8
 	
@@ -49,7 +49,10 @@ example use:
 	$ img2mov -i . -l output_text.txt -r 'jpg$'
 	$ img2mov -t output_text.txt -f 24 -w 640 -h 360 
 	
+extract frames: use -I and -L to pass video file and save prefix (location and filename). 
+
 	$ mkdir frames
 	$ img2mov -I test.mp4 -L frames/testprefix
+
 
 
