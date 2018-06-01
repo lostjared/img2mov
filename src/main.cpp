@@ -27,18 +27,20 @@ void printInfo(const char *program) {
 int main(int argc, char **argv) {
     if(argc > 1) {
         int opt;
-        std::string dir_name, file_name;
+        std::string dir_name, file_name, file_prefix;
         double fps = 0;
         unsigned int width = 0, height = 0;
         bool no_sort = false;
         bool stretch = false;
         bool output_text = false;
         bool quiet = false;
+        bool extract_images = false;
         std::string output_text_name;
         std::string text_file;
         std::string expr;
         std::string match_str;
-        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:m:l:q")) != -1) {
+        std::string extract_file_name;
+        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:m:l:qL:I:")) != -1) {
             switch(opt) {
                 case 'v':
                     std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nsite: http://lostsidedead.com\nemail: lostjared@lostsidedead.com\n";
@@ -81,6 +83,13 @@ int main(int argc, char **argv) {
                 case 'q':
                     quiet = true;
                     break;
+                case 'I':
+                    extract_file_name = optarg;
+                    break;
+                case 'L':
+                    extract_images = true;
+                    file_prefix = optarg;
+                    break;
                 default:
                     std::cout << argv[0] << ": invalid option...\n";
                     printInfo(argv[0]);
@@ -89,7 +98,11 @@ int main(int argc, char **argv) {
             }
         }
         try {
-            if(output_text == false && dir_name.length() == 0 && text_file.length() == 0) {
+            
+            if(extract_file_name.length() > 0 && extract_images == true) {
+                std::cout << "Extracting Images: ...\n";
+                video_tool::img2mov::extractImagesFromFile(extract_file_name, file_prefix);
+            } else  if(output_text == false && dir_name.length() == 0 && text_file.length() == 0) {
                 std::cerr << argv[0] << ": Requires either directory -i or text file -t or file output mode -l\n";
                 printInfo(argv[0]);
                 exit(EXIT_FAILURE);

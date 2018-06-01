@@ -229,5 +229,39 @@ namespace video_tool {
         return temp;
     }
     
+	void img2mov::extractImagesFromFile(const std::string &filename, const std::string file_prefix) {
+        unsigned long index = 0;
+        
+        cv::VideoCapture cap(filename);
+        if(!cap.isOpened()) {
+            std::cerr << "Error could not open video file: " << filename << "\n";
+            exit(EXIT_FAILURE);
+        }
+        
+        bool active = true;
+        
+        while(active) {
+            cv::Mat frame;
+            if(cap.read(frame)==false)
+                break;
+            
+            std::ostringstream filename_info;
+            char prev;
+            filename_info << file_prefix;
+            filename_info.width(20);
+            prev = filename_info.fill('0');
+            filename_info << index;;
+            filename_info.fill(prev);
+            filename_info << ".png";
+            if(!cv::imwrite(filename_info.str(), frame)) {
+                std::cerr << "Could not write output file: " << filename_info.str() << "\n";
+                exit(EXIT_FAILURE);
+            }
+            std::cout << "Wrote image; " << filename_info.str() << "\n";
+            ++index;
+        }
+        
+    }
+    
 }
 

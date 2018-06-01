@@ -16,6 +16,7 @@
 #include<opencv2/opencv.hpp>
 #include<iostream>
 #include<vector>
+#include<sstream>
 #include<string>
 #include<algorithm>
 #include<fstream>
@@ -46,6 +47,7 @@ namespace video_tool {
         static std::string toLower(const std::string &text);
         const std::string name() const;
         std::string searchMode();
+        static void extractImagesFromFile(const std::string &filename, const std::string file_prefix);
     private:
         std::string program_name, filen, dirn;
         double fps;
