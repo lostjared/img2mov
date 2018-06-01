@@ -140,7 +140,7 @@ int main(int argc, char **argv) {
                     program->setRegEx(expr);
                 if(match_str.length() > 0)
                     program->setRegExMatch(match_str);
-            
+                
                 program->setQuiet(quiet);
                 program->run();
             }

@@ -6,7 +6,7 @@
  (C) 2018 by Jared Bruni
  License: GPL v3
  
-*/
+ */
 
 #include "img2mov.hpp"
 
@@ -32,7 +32,7 @@ namespace video_tool {
                 std::sort(output_files.begin(), output_files.end());
             } else
                 if(quiet == false) std::cout << name() << ": not sorting list...\n";
-
+            
             std::fstream f;
             f.open(output_list_name, std::ios::out);
             for(unsigned int i = 0; i < output_files.size(); ++i) {
@@ -90,13 +90,13 @@ namespace video_tool {
             std::sort(files_v.begin(), files_v.end());
         } else
             if(quiet == false) std::cout << name() << ": not sorting list...\n";
-
+        
         cv::VideoWriter writer;
         if(video_mode == 1)
             writer.open(filen, CV_FOURCC('X', 'V', 'I', 'D'), fps, cv::Size(w,h), true);
         else
             writer.open(filen, CV_FOURCC('m', 'p', '4', 'v'), fps, cv::Size(w, h), true);
-
+        
         if(!writer.isOpened()) {
             std::cerr << name() << ": Failed to open file...\n";
             exit(EXIT_FAILURE);
@@ -229,7 +229,7 @@ namespace video_tool {
         return temp;
     }
     
-	void img2mov::extractImagesFromFile(const std::string &filename, const std::string file_prefix) {
+    void img2mov::extractImagesFromFile(const std::string &filename, const std::string file_prefix) {
         unsigned long index = 0;
         unsigned long total_frames = 0;
         
