@@ -241,7 +241,6 @@ namespace video_tool {
         total_frames = cap.get(CV_CAP_PROP_FRAME_COUNT);
         bool active = true;
         
-        
         while(active) {
             cv::Mat frame;
             if(cap.read(frame)==false)
@@ -257,7 +256,7 @@ namespace video_tool {
             filename_info << ".png";
             
             double complete = 0;
-            double val = index;
+            double val = index+1;
             double size = total_frames;
             complete = (val/size)*100;
             
