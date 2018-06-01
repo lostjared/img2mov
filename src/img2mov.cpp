@@ -235,7 +235,7 @@ namespace video_tool {
         
         cv::VideoCapture cap(filename);
         if(!cap.isOpened()) {
-            std::cerr << "Error could not open video file: " << filename << "\n";
+            std::cerr << "img2mov: Error could not open video file: " << filename << "\n";
             exit(EXIT_FAILURE);
         }
         total_frames = cap.get(CV_CAP_PROP_FRAME_COUNT);
@@ -261,10 +261,10 @@ namespace video_tool {
             complete = (val/size)*100;
             
             if(!cv::imwrite(filename_info.str(), frame)) {
-                std::cerr << "Could not write output file: " << filename_info.str() << "\n";
+                std::cerr << "img2mov: Could not write output file: " << filename_info.str() << "\n";
                 exit(EXIT_FAILURE);
             }
-            std::cout << "Wrote image; " << static_cast<unsigned int>(complete) << "% - [" << (index+1) << "/" << total_frames << "] - " << filename_info.str() << "\n";
+            std::cout << "img2mov: Wrote image; " << static_cast<unsigned int>(complete) << "% - [" << (index+1) << "/" << total_frames << "] - " << filename_info.str() << "\n";
             
             ++index;
         }
