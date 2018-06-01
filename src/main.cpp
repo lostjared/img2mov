@@ -26,6 +26,7 @@ void printInfo(const char *program) {
 
 int main(int argc, char **argv) {
     if(argc > 1) {
+        video_tool::img2mov::setName(argv[0]);
         int opt;
         std::string dir_name, file_name, file_prefix;
         double fps = 0;
