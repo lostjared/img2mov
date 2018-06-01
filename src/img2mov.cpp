@@ -231,14 +231,16 @@ namespace video_tool {
     
 	void img2mov::extractImagesFromFile(const std::string &filename, const std::string file_prefix) {
         unsigned long index = 0;
+        unsigned long total_frames = 0;
         
         cv::VideoCapture cap(filename);
         if(!cap.isOpened()) {
             std::cerr << "Error could not open video file: " << filename << "\n";
             exit(EXIT_FAILURE);
         }
-        
+        total_frames = cap.get(CV_CAP_PROP_FRAME_COUNT);
         bool active = true;
+        
         
         while(active) {
             cv::Mat frame;
@@ -253,11 +255,18 @@ namespace video_tool {
             filename_info << index;;
             filename_info.fill(prev);
             filename_info << ".png";
+            
+            double complete = 0;
+            double val = index;
+            double size = total_frames;
+            complete = (val/size)*100;
+            
             if(!cv::imwrite(filename_info.str(), frame)) {
                 std::cerr << "Could not write output file: " << filename_info.str() << "\n";
                 exit(EXIT_FAILURE);
             }
-            std::cout << "Wrote image; " << filename_info.str() << "\n";
+            std::cout << "Wrote image; " << static_cast<unsigned int>(complete) << "% - [" << (index+1) << "/" << total_frames << "] - " << filename_info.str() << "\n";
+            
             ++index;
         }
         
