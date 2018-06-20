@@ -56,7 +56,7 @@ extract frames: use -I and -L to pass video file and save prefix (location and f
 
 optional convert video to jpeg use:
 
-	$ img2ov -I test.mp4 -L frames/testprefix -j 
+	$ img2mov -I test.mp4 -L frames/testprefix -j 
 
 if -j is not present it defaults to png.
 
