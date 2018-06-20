@@ -11,7 +11,7 @@
 #ifndef __IMG2MOV___H_
 #define __IMG2MOV___H_
 
-#define IMG2MOV_VERSION "1.01"
+#define IMG2MOV_VERSION "1.02"
 
 #include<opencv2/opencv.hpp>
 #include<iostream>
@@ -31,6 +31,12 @@
 #include<signal.h>
 
 namespace video_tool {
+    
+    enum FileType {
+        PNG,
+        JPG,
+    };
+    
     class img2mov {
     public:
         img2mov(std::string name, std::string d, bool sort_list) : dirn(d), no_sort(sort_list), quiet(false) {}
@@ -48,7 +54,7 @@ namespace video_tool {
         static std::string toLower(const std::string &text);
         static const std::string name();
         std::string searchMode();
-        static void extractImagesFromFile(const std::string &filename, const std::string file_prefix);
+        static void extractImagesFromFile(FileType ftype, const std::string &filename, const std::string file_prefix);
     private:
         static std::string program_name;
         std::string filen, dirn;

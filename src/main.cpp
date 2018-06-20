@@ -36,12 +36,13 @@ int main(int argc, char **argv) {
         bool output_text = false;
         bool quiet = false;
         bool extract_images = false;
+        video_tool::FileType ftype = video_tool::FileType::PNG;
         std::string output_text_name;
         std::string text_file;
         std::string expr;
         std::string match_str;
         std::string extract_file_name;
-        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:m:l:qL:I:")) != -1) {
+        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:m:l:qL:I:Tj")) != -1) {
             switch(opt) {
                 case 'v':
                     std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nsite: http://lostsidedead.com\nemail: lostjared@lostsidedead.com\n";
@@ -49,6 +50,9 @@ int main(int argc, char **argv) {
                     break;
                 case 'r':
                     expr = optarg;
+                    break;
+                case 'j':
+                    ftype = video_tool::FileType::JPG;
                     break;
                 case 'i':
                     dir_name = optarg;
@@ -101,8 +105,8 @@ int main(int argc, char **argv) {
         try {
             
             if(extract_file_name.length() > 0 && extract_images == true) {
-                std::cout << "Extracting Images from: " << extract_file_name << " ...\n";
-                video_tool::img2mov::extractImagesFromFile(extract_file_name, file_prefix);
+                std::cout << "Extracting Images from: [" << extract_file_name << "] ...\n";
+                video_tool::img2mov::extractImagesFromFile(ftype, extract_file_name, file_prefix);
             } else  if(output_text == false && dir_name.length() == 0 && text_file.length() == 0) {
                 std::cerr << argv[0] << ": Requires either directory -i or text file -t or file output mode -l\n";
                 printInfo(argv[0]);
@@ -119,7 +123,7 @@ int main(int argc, char **argv) {
                 program->setQuiet(quiet);
                 program->output();
             } else if(width == 0  || height == 0 || fps == 0 || (dir_name.length() == 0 && text_file.length() == 0) || file_name.length() == 0) {
-                std::cerr << argv[0] << ": Requires input/output flags..\n";
+                std::cerr << argv[0] << ": Requires input/output flags...\n";
                 printInfo(argv[0]);
                 exit(EXIT_FAILURE);
             } else {

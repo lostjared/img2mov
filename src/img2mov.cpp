@@ -235,9 +235,14 @@ namespace video_tool {
         return temp;
     }
     
-    void img2mov::extractImagesFromFile(const std::string &filename, const std::string file_prefix) {
+    void img2mov::extractImagesFromFile(FileType ft, const std::string &filename, const std::string file_prefix) {
         unsigned long index = 0;
         unsigned long total_frames = 0;
+        
+        if(file_prefix == ".") {
+            std::cerr << "img2mov: Invalid file prefix, requires path...\n";
+            exit(EXIT_FAILURE);
+        }
         
         cv::VideoCapture cap(filename);
         if(!cap.isOpened()) {
@@ -259,7 +264,10 @@ namespace video_tool {
             prev = filename_info.fill('0');
             filename_info << index;;
             filename_info.fill(prev);
-            filename_info << ".png";
+            if(ft == FileType::PNG)
+                filename_info << ".png";
+            else
+                filename_info << ".jpg";
             
             double complete = 0;
             double val = index+1;
