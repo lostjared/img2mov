@@ -256,11 +256,12 @@ namespace video_tool {
             cv::Mat frame;
             if(cap.read(frame)==false)
                 break;
-            
             std::ostringstream filename_info;
+            std::ostringstream total_f;
+            total_f << total_frames;
             char prev;
             filename_info << file_prefix;
-            filename_info.width(20);
+            filename_info.width(total_f.str().length()+1);
             prev = filename_info.fill('0');
             filename_info << index;;
             filename_info.fill(prev);
