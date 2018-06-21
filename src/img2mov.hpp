@@ -35,6 +35,7 @@ namespace video_tool {
     enum FileType {
         PNG,
         JPG,
+        BMP
     };
     
     class img2mov {

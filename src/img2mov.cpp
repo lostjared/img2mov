@@ -238,12 +238,10 @@ namespace video_tool {
     void img2mov::extractImagesFromFile(FileType ft, const std::string &filename, const std::string file_prefix) {
         unsigned long index = 0;
         unsigned long total_frames = 0;
-        
         if(file_prefix == ".") {
             std::cerr << "img2mov: Invalid file prefix, requires path...\n";
             exit(EXIT_FAILURE);
         }
-        
         cv::VideoCapture cap(filename);
         if(!cap.isOpened()) {
             std::cerr << name() << ": Error could not open video file: " << filename << "\n";
@@ -251,7 +249,6 @@ namespace video_tool {
         }
         total_frames = cap.get(CV_CAP_PROP_FRAME_COUNT);
         bool active = true;
-        
         while(active) {
             cv::Mat frame;
             if(cap.read(frame)==false)
@@ -260,15 +257,25 @@ namespace video_tool {
             std::ostringstream total_f;
             total_f << total_frames;
             char prev;
-            filename_info << file_prefix;
+            filename_info << file_prefix << "-";
             filename_info.width(total_f.str().length()+1);
             prev = filename_info.fill('0');
-            filename_info << index;;
+            filename_info << index;
             filename_info.fill(prev);
-            if(ft == FileType::PNG)
-                filename_info << ".png";
-            else
-                filename_info << ".jpg";
+            switch(ft) {
+                case FileType::PNG:
+                    filename_info << ".png";
+                    break;
+                case FileType::JPG:
+                    filename_info << ".jpg";
+                    break;
+                case FileType::BMP:
+                    filename_info << ".bmp";
+                    break;
+                default:
+                    filename_info << ".png";
+                    break;
+            }
             
             double complete = 0;
             double val = index+1;
@@ -283,8 +290,6 @@ namespace video_tool {
             
             ++index;
         }
-        
-    }
-    
+    }    
 }
 

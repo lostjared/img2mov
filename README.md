@@ -37,6 +37,8 @@ to use program
 	-q quiet mode
 	-I file for images to be extracted
 	-L file output prefix for file extraction (test1 or ./folder/testl)
+	-j output as JPEG
+	-b output as BMP
 	
 example use:
 

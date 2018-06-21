@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
         std::string expr;
         std::string match_str;
         std::string extract_file_name;
-        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:m:l:qL:I:Tj")) != -1) {
+        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:m:l:qL:I:Tjb")) != -1) {
             switch(opt) {
                 case 'v':
                     std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nsite: http://lostsidedead.com\nemail: lostjared@lostsidedead.com\n";
@@ -53,6 +53,9 @@ int main(int argc, char **argv) {
                     break;
                 case 'j':
                     ftype = video_tool::FileType::JPG;
+                    break;
+                case 'b':
+                    ftype = video_tool::FileType::BMP;
                     break;
                 case 'i':
                     dir_name = optarg;
