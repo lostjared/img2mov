@@ -203,7 +203,7 @@ namespace video_tool {
                     if(std::regex_match(fullpath, statement)) {
                         files.push_back(fullpath);
                     }
-                } else if(toLower(fullpath).find("png") != std::string::npos || toLower(fullpath).find("jpg") != std::string::npos) {
+                } else if(toLower(fullpath).find("png") != std::string::npos || toLower(fullpath).find("jpg") != std::string::npos || toLower(fullpath).find("bmp") != std::string::npos) {
                     files.push_back(fullpath);
                 }
             }
