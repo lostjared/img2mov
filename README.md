@@ -39,6 +39,7 @@ to use program
 	-L file output prefix for file extraction (test1 or ./folder/testl)
 	-j output as JPEG
 	-b output as BMP
+	-p output as PNG 
 	
 example use:
 
@@ -60,7 +61,10 @@ optional convert video to jpeg use:
 
 	$ img2mov -I test.mp4 -L frames/testprefix -j 
 
-if -j is not present it defaults to png.
+or to output as bmp:
+
+	$ igm2mov -I test.mp4 -L testprog -b
+
 
 
 
