@@ -40,6 +40,7 @@ to use program
 	-j output as JPEG
 	-b output as BMP
 	-p output as PNG 
+	-E extract frame by index
 	
 example use:
 
@@ -63,9 +64,9 @@ optional convert video to jpeg use:
 
 or to output as bmp:
 
-	$ igm2mov -I test.mp4 -L testprog -b
+	$ img2mov -I test.mp4 -L testprog -b
 
+or to extract a single frame example extract frame 5
 
-
-
+	$ img2mov -I test.mp4 -L prefix -E 5
 
