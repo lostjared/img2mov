@@ -290,6 +290,43 @@ namespace video_tool {
             
             ++index;
         }
-    }    
+    }
+    
+    void img2mov::extractImage(FileType ft, const std::string &filename, const int &index, const std::string file_prefix) {
+        cv::VideoCapture cap(filename);
+        if(!cap.isOpened()) {
+            std::cerr << name() << ": Error could not open: " << filename << "\n";
+            exit(EXIT_FAILURE);
+        }
+        
+        cap.set(CV_CAP_PROP_POS_FRAMES, index);
+        cv::Mat frame;
+        cap >> frame;
+        if(frame.empty()) {
+            std::cerr << name() << ": could not grab frame...\n";
+            exit(EXIT_FAILURE);
+        }
+        std::ostringstream stream;
+        std::ostringstream filename_info;
+        switch(ft) {
+            case FileType::PNG:
+                filename_info << ".png";
+                break;
+            case FileType::JPG:
+                filename_info << ".jpg";
+                break;
+            case FileType::BMP:
+                filename_info << ".bmp";
+                break;
+            default:
+                filename_info << ".png";
+                break;
+        }
+        stream << file_prefix << ".captured_frame." << index << filename_info.str();
+        if(cv::imwrite(stream.str(),frame)) {
+            std::cout << "Successfuly outputed: " << stream.str() << "\n";
+        }
+    }
+    
 }
 

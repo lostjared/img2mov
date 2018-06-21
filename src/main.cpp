@@ -36,17 +36,27 @@ int main(int argc, char **argv) {
         bool output_text = false;
         bool quiet = false;
         bool extract_images = false;
+        bool extract_image = false;
+        int frame_index = 0;
         video_tool::FileType ftype = video_tool::FileType::PNG;
         std::string output_text_name;
         std::string text_file;
         std::string expr;
         std::string match_str;
         std::string extract_file_name;
-        while((opt = getopt(argc, argv, "i:o:w:h:f:svnt:r:m:l:qL:I:Tjb")) != -1) {
+        while((opt = getopt(argc, argv, "E:i:o:w:h:f:svnt:r:m:l:qL:I:Tjbp")) != -1) {
             switch(opt) {
                 case 'v':
                     std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nsite: http://lostsidedead.com\nemail: lostjared@lostsidedead.com\n";
                     exit(EXIT_SUCCESS);
+                    break;
+                case 'E':
+                    frame_index = atoi(optarg);
+                    if(frame_index < 0) {
+                        std::cerr << argv[0] << ": Error invalid frame index...\n";
+                        exit(EXIT_FAILURE);
+                    }
+                    extract_image =true;
                     break;
                 case 'r':
                     expr = optarg;
@@ -110,7 +120,9 @@ int main(int argc, char **argv) {
         }
         try {
             
-            if(extract_file_name.length() > 0 && extract_images == true) {
+            if(extract_file_name.length() > 0 && extract_image == true && extract_images == true) {
+                video_tool::img2mov::extractImage(ftype, extract_file_name,frame_index,file_prefix);
+            } else if(extract_file_name.length() > 0 && extract_images == true) {
                 std::cout << "Extracting Images from: [" << extract_file_name << "] ...\n";
                 video_tool::img2mov::extractImagesFromFile(ftype, extract_file_name, file_prefix);
             } else  if(output_text == false && dir_name.length() == 0 && text_file.length() == 0) {

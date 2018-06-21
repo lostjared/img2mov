@@ -56,6 +56,7 @@ namespace video_tool {
         static const std::string name();
         std::string searchMode();
         static void extractImagesFromFile(FileType ftype, const std::string &filename, const std::string file_prefix);
+        static void extractImage(FileType ftype, const std::string &filename, const int &index, const std::string file_prefix);
     private:
         static std::string program_name;
         std::string filen, dirn;
