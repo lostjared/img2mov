@@ -239,7 +239,7 @@ namespace video_tool {
         unsigned long index = 0;
         unsigned long total_frames = 0;
         if(file_prefix == ".") {
-            std::cerr << "img2mov: Invalid file prefix, requires path...\n";
+            std::cerr << name() << ": Invalid file prefix, requires path...\n";
             exit(EXIT_FAILURE);
         }
         cv::VideoCapture cap(filename);
