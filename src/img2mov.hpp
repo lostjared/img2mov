@@ -11,7 +11,7 @@
 #ifndef __IMG2MOV___H_
 #define __IMG2MOV___H_
 
-#define IMG2MOV_VERSION "1.02"
+#define IMG2MOV_VERSION "1.03"
 
 #include<opencv2/opencv.hpp>
 #include<iostream>
