@@ -97,6 +97,12 @@ namespace video_tool {
         } else
             if(quiet == false) std::cout << name() << ": not sorting list...\n";
         
+        if(shuffle_ == true) {
+            static auto rng = std::default_random_engine{};
+            std::shuffle(files_v.begin(), files_v.end(), rng);
+            std::cout << name() << ": Shuffled Files...\n";
+        }
+        
         cv::VideoWriter writer;
         if(video_mode == 1)
             writer.open(filen, CV_FOURCC('X', 'V', 'I', 'D'), fps, cv::Size(w,h), true);
@@ -136,6 +142,10 @@ namespace video_tool {
         }
         writer.release();
         std::cout << name() << ": Wrote " << filen << " " << frame_count << " frames at fps: " << fps << "\n";
+    }
+    
+    void img2mov::setShuffle(bool b) {
+        shuffle_ = b;
     }
     
     void img2mov::setOutputList(const std::string &s) {

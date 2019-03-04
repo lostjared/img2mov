@@ -21,7 +21,7 @@ void control_Handler(int sig) {
 }
 
 void printInfo(std::string prog) {
-    std::cout << "To use: " << prog << "\n\t-v print version/opencv info\n\t-i input directory\n\t-l filename.txt (list textfile)\n\t-r \"search with regular expression\"\n\t-m \"match with regular expression\"\n\t-t input file list in text file\n\t-o omakeutput video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n\t-q quiet mode\n\t-I file for images to be extracted\n\t-L file output prefix for file extraction\n";
+    std::cout << "To use: " << prog << "\n\t-v print version/opencv info\n\t-i input directory\n\t-l filename.txt (list textfile)\n\t-r \"search with regular expression\"\n\t-m \"match with regular expression\"\n\t-t input file list in text file\n\t-o omakeutput video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n\t-S Shuffle Images\n\t-q quiet mode\n\t-I file for images to be extracted\n\t-L file output prefix for file extraction\n";
 }
 
 void printCV_info() {
@@ -41,6 +41,7 @@ int main(int argc, char **argv) {
         bool quiet = false;
         bool extract_images = false;
         bool extract_image = false;
+        bool shuffle_v = false;
         int frame_index = 0;
         video_tool::FileType ftype = video_tool::FileType::PNG;
         std::string output_text_name;
@@ -48,7 +49,7 @@ int main(int argc, char **argv) {
         std::string expr;
         std::string match_str;
         std::string extract_file_name;
-        while((opt = getopt(argc, argv, "E:i:o:w:h:f:svnt:r:m:l:qL:I:Tjbp")) != -1) {
+        while((opt = getopt(argc, argv, "E:i:o:w:h:f:svnt:r:m:l:qL:I:TjbpS")) != -1) {
             switch(opt) {
                 case 'v':
                     std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nsite: http://lostsidedead.com\nemail: lostjared@lostsidedead.com\n";
@@ -116,6 +117,9 @@ int main(int argc, char **argv) {
                     extract_images = true;
                     file_prefix = optarg;
                     break;
+                case 'S':
+                    shuffle_v = true;
+                    break;
                 default:
                     std::cout << argv[0] << ": invalid option...\n";
                     printInfo(argv[0]);
@@ -144,6 +148,7 @@ int main(int argc, char **argv) {
                 program->setRegEx(expr);
                 program->setRegExMatch(match_str);
                 program->setQuiet(quiet);
+                program->setShuffle(shuffle_v);
                 program->output();
             } else if(width == 0  || height == 0 || fps == 0 || (dir_name.length() == 0 && text_file.length() == 0) || file_name.length() == 0) {
                 std::cerr << argv[0] << ": Requires input/output flags...\n";
@@ -170,6 +175,7 @@ int main(int argc, char **argv) {
                     program->setRegExMatch(match_str);
                 
                 program->setQuiet(quiet);
+                program->setShuffle(shuffle_v);
                 program->run();
             }
         } catch(std::exception &e) {
