@@ -105,9 +105,9 @@ namespace video_tool {
         
         cv::VideoWriter writer;
         if(video_mode == 1)
-            writer.open(filen, CV_FOURCC('X', 'V', 'I', 'D'), fps, cv::Size(w,h), true);
+            writer.open(filen, cv::VideoWriter::fourcc('X', 'V', 'I', 'D'), fps, cv::Size(w,h), true);
         else
-            writer.open(filen, CV_FOURCC('m', 'p', '4', 'v'), fps, cv::Size(w, h), true);
+            writer.open(filen, cv::VideoWriter::fourcc('m', 'p', '4', 'v'), fps, cv::Size(w, h), true);
         
         if(!writer.isOpened()) {
             std::cerr << name() << ": Failed to open file...\n";
@@ -257,7 +257,7 @@ namespace video_tool {
             std::cerr << name() << ": Error could not open video file: " << filename << "\n";
             exit(EXIT_FAILURE);
         }
-        total_frames = cap.get(CV_CAP_PROP_FRAME_COUNT);
+        total_frames = cap.get(cv::CAP_PROP_FRAME_COUNT);
         bool active = true;
         std::ostringstream total_f;
         total_f << total_frames;
@@ -309,7 +309,7 @@ namespace video_tool {
             exit(EXIT_FAILURE);
         }
         
-        cap.set(CV_CAP_PROP_POS_FRAMES, index);
+        cap.set(cv::CAP_PROP_POS_FRAMES, index);
         cv::Mat frame;
         cap >> frame;
         if(frame.empty()) {
