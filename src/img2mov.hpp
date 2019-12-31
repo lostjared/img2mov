@@ -41,7 +41,7 @@ namespace video_tool {
     class img2mov {
     public:
         img2mov(std::string name, std::string d, bool sort_list) : dirn(d), no_sort(sort_list), quiet(false), shuffle_(false) {}
-        img2mov(std::string name, std::string d, std::string f, double fps_, unsigned int w_, unsigned int h_, bool stretch_, bool ns) : filen(f), dirn(d), fps(fps_), w(w_), h(h_), stretch_image(stretch_), stop_prog(false), no_sort(ns), use_list(false), output_list(false), quiet(false), shuffle_(false), video_mode(0) {}
+        img2mov(std::string name, std::string d, std::string f, double fps_, unsigned int w_, unsigned int h_, bool stretch_, bool ns) : filen(f), dirn(d), fps(fps_), w(w_), h(h_), stretch_image(stretch_), stop_prog(false), no_sort(ns), use_list(false), output_list(false), quiet(false), video_mode(0), shuffle_(false) {}
         static void setName(const std::string &n);
         void setOutputList(const std::string &s);
         void setList(const std::string &s);

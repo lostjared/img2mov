@@ -1,0 +1,1149 @@
+img2mov.o: img2mov.cpp img2mov.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/opencv.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/opencv_modules.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cvdef.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__config \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/limits.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/limits.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/cdefs.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_symbol_aliasing.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_posix_availability.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/limits.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/limits.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_limits.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/syslimits.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/hal/interface.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstddef \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/stddef.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/__stddef_max_align_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__nullptr \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdint.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/stdint.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdint.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int8_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int16_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int32_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int64_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint8_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint16_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint32_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint64_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/_types.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_types.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_types.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_intptr_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/types.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/types.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int8_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int16_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int32_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int64_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_uintptr_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_intmax_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uintmax_t.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/emmintrin.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/xmmintrin.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/mmintrin.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/mm_malloc.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdlib.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/Availability.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/AvailabilityInternal.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/wait.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_pid_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_id_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/signal.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/appleapiopts.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/signal.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/signal.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/_mcontext.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_mcontext.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/mach/machine/_structs.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/mach/i386/_structs.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_attr_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_sigaltstack.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ucontext.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_sigset_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_size_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_uid_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/resource.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_timeval.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/endian.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/endian.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_endian.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/libkern/_OSByteOrder.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/libkern/i386/_OSByteOrder.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/alloca.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ct_rune_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_rune_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_wchar_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_null.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/malloc/_malloc.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_dev_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mode_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/array \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tuple \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/type_traits \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/utility \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/initializer_list \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstring \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/string.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ssize_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/strings.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdint \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__debug \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iterator \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iosfwd \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wchar.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/wchar.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mbstate_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/stdarg.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdio.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdio.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_stdio.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_va_list.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/stdio.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_off_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/time.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_clock_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_time_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_timespec.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_wctype.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/__wctype.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_wint_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_wctype_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ctype.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/ctype.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/runetype.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_base \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/typeinfo \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/exception \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdlib \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/new \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/algorithm \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__undef_macros \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/tuple \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdexcept \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cassert \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/assert.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/atomic \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/version.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/base.hpp \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/climits \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cvstd.hpp \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cctype \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string_view \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__string \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdio \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwchar \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwctype \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wctype.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/wctype.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_wctrans_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cmath \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/math.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/math.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/neon_utils.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/vsx_utils.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/check.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/traits.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/matx.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/saturate.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/fast_math.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/types.hpp \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cfloat \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/float.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/float.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/float.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/vector \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__bit_reference \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__split_buffer \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/mat.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/bufferpool.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/mat.inl.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/persistence.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/operations.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cvstd.inl.hpp \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/complex \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/sstream \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ostream \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ios \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__locale \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/mutex \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__mutex_base \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/chrono \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ctime \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ratio \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/system_error \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__errc \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cerrno \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/errno.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/errno.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/errno.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__threading_support \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/pthread_impl.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/sched.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread_impl.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_cond_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_key_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_once_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/qos.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/qos.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mach_port_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sched.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/locale.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/locale.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_locale.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_xlocale.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_ctype.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/__wctype.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_stdio.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_stdlib.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_string.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_time.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_wchar.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_wctype.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/streambuf \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/locale \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/nl_types.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/types.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_char.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_short.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_caddr_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_blkcnt_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_blksize_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_gid_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_in_addr_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_in_port_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ino_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ino64_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_key_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_nlink_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_useconds_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_suseconds_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_rsize_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_errno_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_def.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_setsize.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_set.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_clr.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_zero.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_isset.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_copy.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fsblkcnt_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_nl_item.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__bsd_locale_defaults.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/bitset \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/istream \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/utility.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/optim.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/ovx.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/calib3d.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/features2d.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/miniflann.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/defines.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/config.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/affine.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn/dnn.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn/../dnn/version.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn/dict.hpp \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/map \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tree \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__node_handle \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/optional \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn/layer.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn/dnn.inl.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/flann_base.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/general.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/matrix.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/params.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/any.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iostream \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/saving.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/nn_index.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/result_set.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/set \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/all_indices.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/kdtree_index.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/dynamic_bitset.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/dist.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/heap.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/allocator.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/random.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/kdtree_single_index.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/kmeans_index.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/logger.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/composite_index.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/linear_index.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/hierarchical_clustering_index.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/lsh_index.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/lsh_table.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iomanip \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/unordered_map \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__hash_table \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stddef.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/autotuned_index.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/ground_truth.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/index_testing.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/timer.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/sampling.h \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/highgui.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/imgcodecs.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videoio.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/imgproc.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/ml.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/ml/ml.inl.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/objdetect.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/photo.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/shape.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/shape/emdL1.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/shape/shape_transformer.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/shape/hist_cost.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/shape/shape_distance.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/warpers.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/warpers.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cuda.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cuda_types.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cuda.inl.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/matchers.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/util.hpp \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/list \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/util_inl.hpp \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/queue \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/deque \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/camera.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/seam_finders.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/blenders.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/superres.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/superres/optical_flow.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/video.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/video/tracking.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/video/background_segm.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/stabilizer.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/global_motion.hpp \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/fstream \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/optical_flow.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/motion_core.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/outlier_rejection.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/motion_stabilizing.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/frame_source.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/log.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/inpainting.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/fast_marching.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/fast_marching_inl.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/deblurring.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/wobble_suppression.hpp \
+  /usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/ring_buffer.hpp \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/regex \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/unistd.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/unistd.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_posix_vdisable.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_seek_set.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/select.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_select.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_uuid_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/gethostuuid.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/dirent.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/dirent.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/stat.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_s_ifmt.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_filesec_t.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/signal.h \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/random \
+  /Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/numeric
+
+img2mov.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/opencv.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/opencv_modules.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cvdef.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__config:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/limits.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/limits.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/cdefs.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_symbol_aliasing.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_posix_availability.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/limits.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/limits.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_limits.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/syslimits.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/hal/interface.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstddef:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/stddef.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/__stddef_max_align_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__nullptr:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdint.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/stdint.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdint.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int8_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int16_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int32_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int64_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint8_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint16_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint32_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint64_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/_types.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_types.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_types.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_intptr_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/types.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/types.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int8_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int16_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int32_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int64_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_uintptr_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_intmax_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uintmax_t.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cv_cpu_dispatch.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/emmintrin.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/xmmintrin.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/mmintrin.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/mm_malloc.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdlib.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/Availability.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/AvailabilityInternal.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/wait.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_pid_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_id_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/signal.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/appleapiopts.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/signal.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/signal.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/_mcontext.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_mcontext.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/mach/machine/_structs.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/mach/i386/_structs.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_attr_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_sigaltstack.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ucontext.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_sigset_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_size_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_uid_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/resource.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_timeval.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/endian.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/endian.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_endian.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/libkern/_OSByteOrder.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/libkern/i386/_OSByteOrder.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/alloca.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ct_rune_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_rune_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_wchar_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_null.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/malloc/_malloc.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_dev_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mode_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/array:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tuple:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/type_traits:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/utility:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/initializer_list:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstring:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/string.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ssize_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/strings.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdint:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__debug:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iterator:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iosfwd:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wchar.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/wchar.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mbstate_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/stdarg.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdio.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdio.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_stdio.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_va_list.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/stdio.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_off_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/time.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_clock_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_time_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_timespec.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_wctype.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/__wctype.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_wint_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_wctype_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ctype.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/ctype.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/runetype.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_base:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/typeinfo:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/exception:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdlib:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/new:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/algorithm:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__undef_macros:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/tuple:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdexcept:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cassert:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/assert.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/atomic:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/version.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/base.hpp:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/climits:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cvstd.hpp:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cctype:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string_view:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__string:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdio:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwchar:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwctype:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wctype.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/wctype.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_wctrans_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cmath:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/math.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/math.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cvstd_wrapper.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/neon_utils.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/vsx_utils.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/check.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/traits.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/matx.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/saturate.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/fast_math.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/types.hpp:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cfloat:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/float.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.1/include/float.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/float.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/vector:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__bit_reference:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__split_buffer:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/mat.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/bufferpool.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/mat.inl.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/persistence.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/operations.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cvstd.inl.hpp:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/complex:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/sstream:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ostream:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ios:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__locale:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/mutex:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__mutex_base:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/chrono:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ctime:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ratio:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/system_error:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__errc:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cerrno:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/errno.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/errno.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/errno.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__threading_support:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/pthread_impl.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/sched.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread_impl.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_key_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_once_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/qos.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/qos.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mach_port_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sched.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/locale.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/locale.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_locale.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_xlocale.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_ctype.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/__wctype.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_stdio.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_stdlib.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_string.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_time.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_wchar.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_wctype.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/streambuf:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/locale:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/nl_types.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/types.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_char.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_short.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_caddr_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_blkcnt_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_blksize_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_gid_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_in_addr_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_in_port_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ino_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ino64_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_key_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_nlink_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_useconds_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_suseconds_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_rsize_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_errno_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_def.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_setsize.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_set.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_clr.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_zero.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_isset.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_copy.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_nl_item.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__bsd_locale_defaults.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/bitset:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/istream:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/utility.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/optim.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/ovx.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/calib3d.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/features2d.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/miniflann.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/defines.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/config.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/affine.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn/dnn.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn/../dnn/version.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn/dict.hpp:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/map:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tree:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__node_handle:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/optional:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn/layer.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/dnn/dnn.inl.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/flann_base.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/general.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/matrix.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/params.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/any.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iostream:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/saving.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/nn_index.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/result_set.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/set:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/all_indices.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/kdtree_index.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/dynamic_bitset.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/dist.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/heap.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/allocator.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/random.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/kdtree_single_index.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/kmeans_index.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/logger.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/composite_index.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/linear_index.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/hierarchical_clustering_index.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/lsh_index.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/lsh_table.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iomanip:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/unordered_map:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__hash_table:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stddef.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/autotuned_index.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/ground_truth.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/index_testing.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/timer.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/flann/sampling.h:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/highgui.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/imgcodecs.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videoio.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/imgproc.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/ml.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/ml/ml.inl.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/objdetect.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/objdetect/detection_based_tracker.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/photo.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/shape.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/shape/emdL1.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/shape/shape_transformer.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/shape/hist_cost.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/shape/shape_distance.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/warpers.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/warpers.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cuda.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cuda_types.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/core/cuda.inl.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/warpers_inl.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/matchers.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/motion_estimators.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/util.hpp:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/list:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/util_inl.hpp:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/queue:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/deque:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/camera.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/exposure_compensate.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/seam_finders.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/stitching/detail/blenders.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/superres.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/superres/optical_flow.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/video.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/video/tracking.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/video/background_segm.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/stabilizer.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/global_motion.hpp:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/fstream:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/optical_flow.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/motion_core.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/outlier_rejection.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/motion_stabilizing.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/frame_source.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/log.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/inpainting.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/fast_marching.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/fast_marching_inl.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/deblurring.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/wobble_suppression.hpp:
+
+/usr/local/Cellar/opencv/4.0.1/include/opencv4/opencv2/videostab/ring_buffer.hpp:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/regex:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/unistd.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/unistd.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_posix_vdisable.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_seek_set.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/select.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_select.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_uuid_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/gethostuuid.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/dirent.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/dirent.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/stat.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_s_ifmt.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_filesec_t.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/signal.h:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/random:
+
+/Users/jared/Source/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/numeric:
