@@ -19,6 +19,16 @@ To compile use
 Note: if your CPU has more than one core use -j with number of cores will speed up compilation. Example if your CPU has 8 cores
 	
 	$ make -j8
+
+Or to compile with CMake use:
+
+	$ mkdir build && cd build
+
+	$ cmake ..
+
+	$ make -j8
+
+	$ sudo make install
 	
 to use program
 
