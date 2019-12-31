@@ -52,7 +52,7 @@ to use program
 	-p output as PNG 
 	-E extract frame by index
 
-Program now outputs video a AVC.
+Program now outputs video as AVC.
 	
 example use:
 
