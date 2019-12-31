@@ -107,13 +107,13 @@ namespace video_tool {
         if(video_mode == 1)
             writer.open(filen, cv::VideoWriter::fourcc('X', 'V', 'I', 'D'), fps, cv::Size(w,h), true);
         else
-            writer.open(filen, cv::VideoWriter::fourcc('m', 'p', '4', 'v'), fps, cv::Size(w, h), true);
+            writer.open(filen, cv::VideoWriter::fourcc('a', 'v', 'c', '1'), fps, cv::Size(w, h), true);
         
         if(!writer.isOpened()) {
             std::cerr << name() << ": Failed to open file...\n";
             exit(EXIT_FAILURE);
         }
-        if(quiet == false) std::cout << name() << ": Video opened as: " << ((video_mode == 1) ? "XviD" : "MPEG-4") << "\n";
+        if(quiet == false) std::cout << name() << ": Video opened as: " << ((video_mode == 1) ? "XviD" : "MPEG-4/H.264") << "\n";
         
         unsigned int frame_count = 0;
         for(unsigned int i = 0; i < files_v.size(); ++i) {

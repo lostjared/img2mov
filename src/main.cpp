@@ -163,8 +163,8 @@ int main(int argc, char **argv) {
                     std::cerr << argv[0] << ": Error on sigaction:\n";
                     exit(EXIT_FAILURE);
                 }
-                if(video_tool::img2mov::toLower(file_name).find(".mov") == std::string::npos && video_tool::img2mov::toLower(file_name).find(".avi") == std::string::npos)
-                    file_name += ".mov";
+                if(video_tool::img2mov::toLower(file_name).find(".mp4") == std::string::npos && video_tool::img2mov::toLower(file_name).find(".avi") == std::string::npos)
+                    file_name += ".mp4";
                 std::cout << argv[0] << ": Press Ctrl+C to stop processing...\n";
                 program.reset(new video_tool::img2mov(argv[0], dir_name, file_name,fps,width,height,stretch, no_sort));
                 if(text_file.length() > 0)
