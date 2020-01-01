@@ -51,6 +51,7 @@ to use program
 	-b output as BMP
 	-p output as PNG 
 	-E extract frame by index
+	-H output as HEVC x265
 
 Program now outputs video as AVC.
 	
