@@ -22,6 +22,10 @@ namespace video_tool {
         program_name = s;
     }
     
+    void img2mov::setHEVC(bool h) {
+        hevc = h;
+    }
+    
     void img2mov::output() {
         if(output_list == false) {
             std::cerr << name() << ": requires flag to be set...\n";
@@ -104,16 +108,36 @@ namespace video_tool {
         }
         
         cv::VideoWriter writer;
+        
+        
+        
         if(video_mode == 1)
             writer.open(filen, cv::VideoWriter::fourcc('X', 'V', 'I', 'D'), fps, cv::Size(w,h), true);
-        else
-            writer.open(filen, cv::VideoWriter::fourcc('a', 'v', 'c', '1'), fps, cv::Size(w, h), true);
-        
+        else {
+            if(hevc == false)
+                writer.open(filen, cv::VideoWriter::fourcc('a', 'v', 'c', '1'), fps, cv::Size(w, h), true);
+            else
+                writer.open(filen, cv::VideoWriter::fourcc('h', 'v', 'c', '1'), fps, cv::Size(w, h), true);
+        }
         if(!writer.isOpened()) {
             std::cerr << name() << ": Failed to open file...\n";
             exit(EXIT_FAILURE);
         }
-        if(quiet == false) std::cout << name() << ": Video opened as: " << ((video_mode == 1) ? "XviD" : "MPEG-4/H.264") << "\n";
+        
+        std::string out_type;
+        switch(video_mode) {
+            case 1:
+                out_type = "XviD";
+                break;
+            default:
+                if(hevc)
+                    out_type = "HEVC";
+                else
+                    out_type = "AVC";
+                
+        }
+        
+        if(quiet == false) std::cout << name() << ": Video opened as: " << out_type << "\n";
         
         unsigned int frame_count = 0;
         for(unsigned int i = 0; i < files_v.size(); ++i) {

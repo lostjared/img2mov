@@ -49,6 +49,7 @@ namespace video_tool {
         void setRegExMatch(const std::string &m);
         void setQuiet(bool q);
         void setShuffle(bool b);
+        void setHEVC(bool h);
         void run();
         void output();
         void addDirectory(std::string path, std::vector<std::string> &files);
@@ -70,6 +71,7 @@ namespace video_tool {
         bool output_list;
         bool quiet;
         unsigned int video_mode;
+        bool hevc;
         std::string output_list_name;
         std::string expr, match_expr;
         std::string text_file;
