@@ -53,7 +53,7 @@ to use program
 	-E extract frame by index
 	-H output as HEVC x265
 
-Program now outputs video as AVC.
+Program now default outputs video as AVC. To use HEVC use -H 
 	
 example use:
 
