@@ -24,6 +24,7 @@ list(APPEND source_files
 ${CMAKE_SOURCE_DIR}/src/main.cpp
 ${CMAKE_SOURCE_DIR}/src/img2mov.cpp
 ${CMAKE_SOURCE_DIR}/src/img2mov.hpp
+${CMAKE_SOURCE_DIR}/src/ffmpeg_write.cpp
 )
 
 find_package(OpenCV REQUIRED)

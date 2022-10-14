@@ -50,6 +50,7 @@ namespace video_tool {
         void setQuiet(bool q);
         void setShuffle(bool b);
         void setHEVC(bool h);
+        void setOutputMode(const int &mode, const int &crf);
         void run();
         void output();
         void addDirectory(std::string path, std::vector<std::string> &files);
@@ -72,6 +73,7 @@ namespace video_tool {
         bool quiet;
         unsigned int video_mode;
         bool hevc;
+        int output_mode, crf_value;
         std::string output_list_name;
         std::string expr, match_expr;
         std::string text_file;

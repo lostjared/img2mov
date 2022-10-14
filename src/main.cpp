@@ -10,6 +10,7 @@
 
 #include "img2mov.hpp"
 #include<memory>
+#include"ffmpeg_write.h"
 
 std::unique_ptr<video_tool::img2mov> program;
 
@@ -21,7 +22,7 @@ void control_Handler(int sig) {
 }
 
 void printInfo(std::string prog) {
-    std::cout << "To use: " << prog << "\n\t-v print version/opencv info\n\t-i input directory\n\t-l filename.txt (list textfile)\n\t-r \"search with regular expression\"\n\t-m \"match with regular expression\"\n\t-t input file list in text file\n\t-o omakeutput video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n\t-S Shuffle Images\n\t-q quiet mode\n\t-I file for images to be extracted\n\t-L file output prefix for file extraction\n\t-H output as HEVC\n";
+    std::cout << "To use: " << prog << "\n\t-v print version/opencv info\n\t-i input directory\n\t-l filename.txt (list textfile)\n\t-r \"search with regular expression\"\n\t-m \"match with regular expression\"\n\t-t input file list in text file\n\t-o omakeutput video file mov\n\t-w frame width\n\t-h frame height\n\t-f frames per second\n\t-s stretch image (if not set will resize to keep aspect ratio)\n\t-n do not sort list of files..\n\t-S Shuffle Images\n\t-q quiet mode\n\t-I file for images to be extracted\n\t-L file output prefix for file extraction\n\t-H output as HEVC\n\t-4 pipe to ffmpeg x264\n\t-5 pipe to ffmpeg x265\n\t-c CRF value\n\t-7 ffmpeg path\n";
 }
 
 void printCV_info() {
@@ -44,14 +45,31 @@ int main(int argc, char **argv) {
         bool shuffle_v = false;
         bool hevc = false;
         int frame_index = 0;
+        int output_mode = 0;
+        int crf_value = 22;
+        
         video_tool::FileType ftype = video_tool::FileType::PNG;
         std::string output_text_name;
         std::string text_file;
         std::string expr;
         std::string match_str;
         std::string extract_file_name;
-        while((opt = getopt(argc, argv, "E:i:o:w:h:f:svnt:r:m:l:qL:I:TjbpSH")) != -1) {
+        while((opt = getopt(argc, argv, "E:i:o:w:h:f:svnt:r:m:l:qL:I:TjbpSH45c7:")) != -1) {
             switch(opt) {
+                case '7':
+                    if(optarg != NULL)
+                        ffmpeg_path = optarg;
+                    break;
+                case 'c':
+                    if(optarg != NULL)
+                        crf_value = atoi(optarg);
+                    break;
+                case '4':
+                    output_mode = 1;
+                    break;
+                case '5':
+                    output_mode = 2;
+                    break;
                 case 'v':
                     std::cout << argv[0] << " v" << IMG2MOV_VERSION << " written by Jared Bruni\nsite: http://lostsidedead.com\nemail: lostjared@lostsidedead.com\n";
                     printCV_info();
@@ -148,6 +166,7 @@ int main(int argc, char **argv) {
                 exit(EXIT_FAILURE);
             } else if((output_text == true && dir_name.length() > 0) && (expr.length() > 0 || match_str.length()>0)) {
                 program.reset(new video_tool::img2mov(argv[0], dir_name, no_sort));
+                program->setOutputMode(output_mode, crf_value);
                 program->setOutputList(output_text_name);
                 program->setRegEx(expr);
                 program->setRegExMatch(match_str);
@@ -182,6 +201,7 @@ int main(int argc, char **argv) {
                 program->setQuiet(quiet);
                 program->setShuffle(shuffle_v);
                 program->setHEVC(hevc);
+                program->setOutputMode(output_mode, crf_value);
                 program->run();
             }
         } catch(std::exception &e) {
