@@ -2,10 +2,6 @@
 
 Requires: OpenCV Development Files
 
-Watch this video tutorial on how to compile/use this program
-
-https://youtu.be/K5FHAqI5RL0
-
 This program should be easy to compile, you will just need GCC,OpenCV development files,Autoconf,Automake
 
 In Debian/Ubuntu use:
