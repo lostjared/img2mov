@@ -1,85 +1,122 @@
+
 # img2mov
 
-Requires: OpenCV Development Files
+A simple and efficient tool to convert a series of images into a movie file, with options for extracting frames, specifying output format, and more. 
 
-This program should be easy to compile, you will just need GCC,OpenCV development files,Autoconf,Automake
+## Requirements
 
-In Debian/Ubuntu use:
+- GCC
+- OpenCV Development Files
+- Autoconf
+- Automake
 
-	$ sudo apt-get install libopencv-dev
+## Installation
 
-To compile use
+### For Debian/Ubuntu
 
-	$ ./autogen.sh && ./configure && make 
+To install the required OpenCV development files, run:
 
-Note: if your CPU has more than one core use -j with number of cores will speed up compilation. Example if your CPU has 8 cores
-	
-	$ make -j8
+```bash
+sudo apt-get install libopencv-dev
+```
 
-Or to compile with CMake use:
+## Compilation
 
-	$ mkdir build && cd build
+You can compile the program using either `automake` or `CMake`. 
 
-	$ cmake ..
+### Using Automake
 
-	$ make -j8
+Run the following commands in the terminal:
 
-	$ sudo make install
-	
-to use program
+```bash
+./autogen.sh && ./configure && make
+```
 
-	-v print version info
-	-i input directory
-	-r "search with regular expression"
-	-m "match with regular expression"
-	-t input file list in text file
-	-l output_filename search only do not create video instead output list
-	-o output video file mov
-	-w frame width
-	-h frame height
-	-f frames per second
-	-s stretch image (if not set will resize to keep aspect ratio)
-	-n do not sort list of files
-	-q quiet mode
-	-I file for images to be extracted
-	-L file output prefix for file extraction (test1 or ./folder/testl)
-	-j output as JPEG
-	-b output as BMP
-	-p output as PNG 
-	-E extract frame by index
-	-H output as HEVC x265
-	-4 Pipe to ffmpeg as x264
-	-5 Pipe to ffmpeg as x265
-	-7 Path to ffmpeg
-	-c CRF Value for ffmpeg pipe
+**Note**: If your CPU has more than one core, you can use `-j` followed by the number of cores to speed up the compilation. For example, if your CPU has 8 cores:
 
-Program now default outputs video as AVC. To use HEVC use -H unless you pipe to ffmpeg
+```bash
+make -j8
+```
 
-example use:
+### Using CMake
 
-	$ img2mov -i . -o videofile.mp4 -w 1920 -h 1080 -f 24 
-	$ img2mov -i ~/Movies -o outputfile.mp4 -w 1280 -h 720 -f 24 -r 'jpg$'
-	$ img2mov -i ~/Movies -l file_list.txt -r 'jpg$'
-	$ img2mov -i . -l output_text.txt -r 'jpg$'
-	$ img2mov -t input_list.txt -f 24 -w 640 -h 360 -o output.mp4
-	$ img2mov -t input_list.txt -f 24 -w 640 -h 360 -4 -o output.mp4
-	$ img2mov -t input_list.txt -f 24 -w 640 -h 360 -5 -o output.mp4 -c 26
+For compiling with CMake, use:
 
-	
-extract frames: use -I and -L to pass video file and save prefix (location and filename). 
+```bash
+mkdir build && cd build
+cmake ..
+make -j8
+sudo make install
+```
 
-	$ mkdir frames
-	$ img2mov -I test.mp4 -L frames/testprefix
+## Usage
 
-optional convert video to jpeg use:
+To use `img2mov`, you have various options:
 
-	$ img2mov -I test.mp4 -L frames/testprefix -j 
+- `-v` Print version info
+- `-i` Input directory
+- `-r` Search with regular expression
+- `-m` Match with regular expression
+- `-t` Input file list in text file
+- `-l` Output filename search only; do not create video (instead, output list)
+- `-o` Output video file (.mov)
+- `-w` Frame width
+- `-h` Frame height
+- `-f` Frames per second
+- `-s` Stretch image (if not set, will resize to keep aspect ratio)
+- `-n` Do not sort list of files
+- `-q` Quiet mode
+- `-I` File for images to be extracted
+- `-L` File output prefix for file extraction (e.g., `test1` or `./folder/test1`)
+- `-j` Output as JPEG
+- `-b` Output as BMP
+- `-p` Output as PNG
+- `-E` Extract frame by index
+- `-H` Output as HEVC x265
+- `-4` Pipe to ffmpeg as x264
+- `-5` Pipe to ffmpeg as x265
+- `-7` Path to ffmpeg
+- `-c` CRF Value for ffmpeg pipe
 
-or to output as bmp:
+The program defaults to outputting video as AVC. To use HEVC, use `-H` unless you pipe to ffmpeg.
 
-	$ img2mov -I test.mp4 -L testprog -b
+### Examples
 
-or to extract a single frame example extract frame 5
+```bash
+img2mov -i . -o videofile.mp4 -w 1920 -h 1080 -f 24
+img2mov -i ~/Movies -o outputfile.mp4 -w 1280 -h 720 -f 24 -r 'jpg$'
+img2mov -i ~/Movies -l file_list.txt -r 'jpg$'
+img2mov -i . -l output_text.txt -r 'jpg$'
+img2mov -t input_list.txt -f 24 -w 640 -h 360 -o output.mp4
+img2mov -t input_list.txt -f 24 -w 640 -h 360 -4 -o output.mp4
+img2mov -t input_list.txt -f 24 -w 640 -h 360 -5 -o output.mp4 -c 26
+```
 
-	$ img2mov -I test.mp4 -L prefix -E 5
+#### Extracting Frames
+
+To extract frames, use `-I` and `-L` to pass the video file and save prefix (location and filename). Example:
+
+```bash
+mkdir frames
+img2mov -I test.mp4 -L frames/testprefix
+```
+
+Optional: Convert video to jpeg:
+
+```bash
+img2mov -I test.mp4 -L frames/testprefix -j
+```
+
+Or to output as BMP:
+
+```bash
+img2mov -I test.mp4 -L testprog -b
+```
+
+To extract a single frame (example: extract frame 5):
+
+```bash
+img2mov -I test.mp4 -L prefix -E 5
+```
+
 
