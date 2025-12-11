@@ -109,7 +109,7 @@ void img2mov::run() {
     }
     
     cv::VideoWriter writer;
-    FILE *output_pipe;
+    FILE *output_pipe = NULL;
     
     if(output_mode == 0) {
         

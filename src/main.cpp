@@ -7,7 +7,7 @@
  License: GPL v3
  
  */
-
+#include<opencv2/opencv.hpp>
 #include "img2mov.hpp"
 #include<memory>
 #include"ffmpeg_write.h"
