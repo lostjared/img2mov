@@ -1,30 +1,61 @@
 
 # img2mov
 
-A simple and efficient tool to convert a series of images into a movie file, with options for extracting frames, specifying output format, and more. 
+A C++ image-sequence-to-video tool with a command-line interface and an optional Qt GUI. It can also export image lists and extract frames from existing videos.
 
 ## Requirements
 
-- GCC
+- A C++ compiler and CMake 3.16 or newer
 - OpenCV 4 or 5 development files
-- Autoconf
-- Automake
+- FFmpeg executable and development files (`libavcodec`, `libavformat`, and `libavutil`)
+- `pkg-config`
+- Qt 5 or Qt 6 Widgets development files (GUI only)
+- Autoconf and Automake (optional alternative CLI build)
 
 ## Installation
 
 ### For Debian/Ubuntu
 
-To install the required OpenCV development files, run:
+Install the common build dependencies with:
 
 ```bash
-sudo apt-get install libopencv-dev
+sudo apt-get install build-essential cmake pkg-config libopencv-dev \
+  libavcodec-dev libavformat-dev libavutil-dev ffmpeg qt6-base-dev
 ```
 
-## Compilation
+## Build
 
-You can compile the program using either `automake` or `CMake`. 
+### CLI and GUI with CMake
 
-### Using Automake
+Configure and build both applications from the repository root:
+
+```bash
+cmake -S . -B build -DBUILD_GUI=ON
+cmake --build build -j8
+```
+
+The resulting executables are:
+
+```text
+build/img2mov
+build/img2mov-gui/img2mov-gui
+```
+
+Run the GUI with `./build/img2mov-gui/img2mov-gui`. To build only the CLI, omit `-DBUILD_GUI=ON`. To install the configured targets, run `cmake --install build`; use an appropriate install prefix or elevated permissions when required.
+
+### Standalone GUI
+
+The GUI is a C++17 target and can be built independently:
+
+```bash
+cmake -S img2mov-gui -B build-gui
+cmake --build build-gui -j8
+./build-gui/img2mov-gui
+```
+
+CMake automatically detects Qt 5 or 6 and OpenCV 4 or 5.
+
+### CLI with Autotools
 
 Run the following commands in the terminal:
 
@@ -32,24 +63,30 @@ Run the following commands in the terminal:
 ./autogen.sh && ./configure && make
 ```
 
-**Note**: If your CPU has more than one core, you can use `-j` followed by the number of cores to speed up the compilation. For example, if your CPU has 8 cores:
+This path builds the command-line application only.
 
-```bash
-make -j8
-```
+## GUI Usage
 
-### Using CMake
+Start by adding image files. Drag rows to arrange them when **Sort alphabetically** is disabled. The sequence controls provide:
 
-For compiling with CMake, use:
+- **Sort alphabetically:** applies case-insensitive path ordering before encoding.
+- **Shuffle before encoding:** randomizes the final sequence after optional sorting.
+- **Fit:** preserves each image's aspect ratio and adds black padding where needed.
+- **Stretch:** resizes each image to fill the selected output dimensions.
+- **Frames per second:** treats every input image as one video frame.
+- **Frames per image:** repeats each image for the selected number of frames at 30 fps.
 
-```bash
-mkdir build && cd build
-cmake ..
-make -j8
-sudo make install
-```
+The resolution box includes common presets and accepts custom values such as `2560x1440`. The codec list is populated at startup from `ffmpeg -encoders`; `libx264` is selected by default when available. Hardware encoders such as `h264_nvenc` and `hevc_nvenc` may appear when compiled into FFmpeg but still require compatible hardware and drivers.
 
-## Usage
+### Rate Control
+
+- **Quality — CRF/CQ:** uses `-crf` with `libx264`, `libx264rgb`, or `libx265`; `h264_nvenc` and `hevc_nvenc` use NVENC VBR with `-cq` and no target bitrate. Lower values increase quality and file size.
+- **CBR:** sets the target, minimum, and maximum bitrate to the requested kbps value. NVENC codecs additionally use `-rc cbr`.
+- **VBR:** sets a target bitrate with a maximum and buffer size of twice that value. NVENC codecs additionally use `-rc vbr`.
+
+Not every FFmpeg encoder supports MP4, `yuv420p`, or every rate-control mode. Encoding errors from incompatible choices are shown in the GUI log.
+
+## Command-Line Usage
 
 To use `img2mov`, you have various options:
 
@@ -118,4 +155,3 @@ To extract a single frame (example: extract frame 5):
 ```bash
 img2mov -I test.mp4 -L prefix -E 5
 ```
-
