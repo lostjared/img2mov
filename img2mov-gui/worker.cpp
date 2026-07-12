@@ -20,47 +20,60 @@ cv::Mat resizeKeepAspectRatio(const cv::Mat &input, const cv::Size &dstSize, con
 
 
 void Worker::run() {
-    emit logMessage("Starting up encode process");
+    emit logMessage("Starting encoding process…");
     QStringList parts = resolution.split('x');
     int x = 0, y = 0;
     if (parts.size() == 2) {
         x = parts[0].toInt();
         y = parts[1].toInt();
     } else {
-        emit logMessage("Invalid resolution should by WidthxHeight");
+        emit completed(false, "Invalid resolution. Use WidthxHeight.");
         return;
     }
     QString total = QString::number(files.size());
     QString frames_per = QString::number(frame_per_image);
 
-    FILE *fptr = open_ffmpeg(filename.toStdString().c_str(), "libx264", resolution.toStdString().c_str(), resolution.toStdString().c_str(), fps_value.toStdString().c_str(), "24");
+    emit logMessage("Encoder: " + codec);
+    const QString crfValue = QString::number(crf);
+    const QString bitrateValue = QString::number(bitrateKbps);
+    FILE *fptr = open_ffmpeg(filename.toStdString().c_str(), codec.toStdString().c_str(), resolution.toStdString().c_str(), resolution.toStdString().c_str(), fps_value.toStdString().c_str(), crfValue.toStdString().c_str(), rateControl.toStdString().c_str(), bitrateValue.toStdString().c_str());
     if(!fptr) {
-        emit logMessage("Could not open ffmpeg...\n");
+        emit completed(false, "Could not start FFmpeg. Check that it is installed and available in PATH.");
         return;
     }
     for(int i = 0; i < files.size(); ++i) {
         cv::Mat frame = cv::imread(files[i].toStdString());
-        if(frame.empty()) continue;
-        cv::Mat resized = resizeKeepAspectRatio(frame, cv::Size(x,y), cv::Scalar(0, 0, 0));
+        if(frame.empty()) {
+            emit logMessage("Skipped unreadable image: " + files[i]);
+            continue;
+        }
+        cv::Mat resized;
+        if (stretch) {
+            cv::resize(frame, resized, cv::Size(x, y));
+        } else {
+            resized = resizeKeepAspectRatio(frame, cv::Size(x,y), cv::Scalar(0, 0, 0));
+        }
         if(frame_per_image != 0)
             for(int z = 0; z < frame_per_image; ++z) {
                 write_ffmpeg(fptr, resized);
-                emit logMessage(" -- [" + QString::number(z+1) + "/" + frames_per + "] frames per image");
             }
         else
             write_ffmpeg(fptr, resized);
 
-        emit logMessage("[" + QString::number(i+1) + "/" + total + "] frame written");
+        emit logMessage("[" + QString::number(i+1) + "/" + total + "] " + files[i]);
+        emit progress(i + 1, files.size());
     }
 #ifdef _WIN32
     _pclose(fptr);
 #else   
     if(pclose(fptr) < 0) {
-        std::cerr << "Error closing..\n";
+        emit completed(false, "FFmpeg exited with an error while finalizing the video.");
+        frame_per_image = 0;
+        return;
     }
 #endif
     frame_per_image = 0;
-    emit logMessage("Successfully finished.");
+    emit completed(true, "Video created successfully.");
 }
 
 void Worker::setFps(float value) {
@@ -74,6 +87,23 @@ void Worker::setFramesPerImage(int frame_count) {
     
 void Worker::setOutput(const QString &file) {
     filename = file;
+}
+
+void Worker::setCodec(const QString &codecName) {
+    codec = codecName;
+}
+
+void Worker::setStretch(bool enabled) {
+    stretch = enabled;
+}
+
+void Worker::setCrf(int value) {
+    crf = value;
+}
+
+void Worker::setRateControl(const QString &mode, int bitrate) {
+    rateControl = mode;
+    bitrateKbps = bitrate;
 }
 
 

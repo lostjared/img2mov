@@ -7,14 +7,11 @@ AC_PROG_CXX
 AC_PROG_CC
 AM_INIT_AUTOMAKE
 
-PKG_CHECK_MODULES(OPENCV, opencv4, found=1, found=0)
-
-if test $found = 0; then
-AC_MSG_ERROR(Error could not find OpenCV pkg-config file is it installed?)
-else
-echo "OpenCV Found!"
-fi
-
+PKG_CHECK_MODULES([OPENCV], [opencv5],
+    [AC_MSG_NOTICE([OpenCV 5 found])],
+    [PKG_CHECK_MODULES([OPENCV], [opencv4],
+        [AC_MSG_NOTICE([OpenCV 4 found])],
+        [AC_MSG_ERROR([OpenCV 4 or 5 development files were not found])])])
 
 CV_INCLUDES=$OPENCV_CFLAGS
 CV_LIBS=$OPENCV_LIBS

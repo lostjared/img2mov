@@ -6,7 +6,7 @@ A simple and efficient tool to convert a series of images into a movie file, wit
 ## Requirements
 
 - GCC
-- OpenCV Development Files
+- OpenCV 4 or 5 development files
 - Autoconf
 - Automake
 
@@ -118,5 +118,4 @@ To extract a single frame (example: extract frame 5):
 ```bash
 img2mov -I test.mp4 -L prefix -E 5
 ```
-
 

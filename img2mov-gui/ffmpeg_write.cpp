@@ -16,14 +16,41 @@ char buffer[1024*1024];
 std::fstream file;
 int stdout_save;
 
-FILE *open_ffmpeg(const char *output, const char *codec, const char *, const char *dst_res, const char *fps, const char *crf) {
-    
-    std::string tag;
-    if(std::string(codec)=="libx265")
-        tag = "-tag:v hvc1";
-    
+FILE *open_ffmpeg(const char *output, const char *codec, const char *, const char *dst_res, const char *fps, const char *crf, const char *rate_control, const char *bitrate_kbps) {
+    const std::string codecName(codec);
+    const std::string rateControl(rate_control);
+    const std::string bitrate = std::string(bitrate_kbps) + "k";
+    const bool supportsCrf = codecName == "libx264" || codecName == "libx264rgb" || codecName == "libx265";
+    const bool supportsNvencCq = codecName == "h264_nvenc" || codecName == "hevc_nvenc";
     std::ostringstream stream;
-    stream << ffmpeg_path << " -y -s " << dst_res << " -pixel_format bgr24 -f rawvideo -r " << fps << " -i pipe: -vcodec " << codec << " -pix_fmt yuv420p " <<  tag << " -crf " << crf << " " <<  output;
+    stream << ffmpeg_path << " -y -s " << dst_res
+           << " -pixel_format bgr24 -f rawvideo -r " << fps
+           << " -i pipe: -an -vcodec " << codec
+           << " -pix_fmt yuv420p";
+    if (rateControl == "quality") {
+        if (supportsCrf) {
+            stream << " -crf " << crf;
+        } else if (supportsNvencCq) {
+            stream << " -rc vbr -cq " << crf << " -b:v 0";
+        }
+    } else if (rateControl == "cbr") {
+        if (supportsNvencCq) {
+            stream << " -rc cbr";
+        }
+        stream << " -b:v " << bitrate
+               << " -minrate " << bitrate
+               << " -maxrate " << bitrate
+               << " -bufsize " << (std::stoi(bitrate_kbps) * 2) << "k";
+    } else if (rateControl == "vbr") {
+        if (supportsNvencCq) {
+            stream << " -rc vbr";
+        }
+        stream << " -b:v " << bitrate
+               << " -maxrate " << (std::stoi(bitrate_kbps) * 2) << "k"
+               << " -bufsize " << (std::stoi(bitrate_kbps) * 2) << "k";
+    }
+    stream
+           << " \"" << output << "\"";
     
 #ifndef _WIN32
     FILE *fptr = popen(stream.str().c_str(), "w");

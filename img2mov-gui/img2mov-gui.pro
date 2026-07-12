@@ -14,11 +14,13 @@ HEADERS += \
 CONFIG += c++17
 
 CONFIG += link_pkgconfig
-PKGCONFIG += opencv4
-
-#INCLUDEPATH += /usr/include/opencv4
-win32 {
-#LIBS += ./libopencv_core.dll.a ./libopencv_imgcodecs.dll.a 
+packagesExist(opencv5) {
+    PKGCONFIG += opencv5
+    message("Building with OpenCV 5")
+} else:packagesExist(opencv4) {
+    PKGCONFIG += opencv4
+    message("Building with OpenCV 4")
+} else {
+    error("OpenCV 4 or 5 development package not found")
 }
-#LIBS += -lopencv_core -lopencv_imgcodecs
 

@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 project(img2mov LANGUAGES CXX)
 
+option(BUILD_GUI "Build the Qt graphical application" OFF)
+
 # Set build type
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
@@ -34,14 +36,16 @@ set(source_files
 )
 
 # Find packages
-find_package(OpenCV 4.0 REQUIRED)
+# Discover first, then validate: requesting major version 4 directly causes
+# OpenCV 5's package configuration to reject the otherwise compatible build.
+find_package(OpenCV REQUIRED)
 find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(FFMPEG REQUIRED IMPORTED_TARGET libavcodec libavformat libavutil)
 
 # Check OpenCV version
-if(${OpenCV_VERSION} LESS 3.0)
-    message(FATAL_ERROR "Requires OpenCV 3 or greater")
+if(OpenCV_VERSION VERSION_LESS 4.0)
+    message(FATAL_ERROR "Requires OpenCV 4 or newer")
 endif()
 
 message(STATUS "Found OpenCV version: ${OpenCV_VERSION}")
@@ -62,3 +66,7 @@ target_include_directories(img2mov PRIVATE ${OpenCV_INCLUDE_DIRS})
 
 # Install
 install(TARGETS img2mov DESTINATION bin)
+
+if(BUILD_GUI)
+    add_subdirectory(img2mov-gui)
+endif()

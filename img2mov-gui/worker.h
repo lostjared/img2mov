@@ -16,14 +16,25 @@ public:
     void setFps(float value);
     void setFramesPerImage(int frame_count);
     void setOutput(const QString &file);
+    void setCodec(const QString &codecName);
+    void setStretch(bool enabled);
+    void setCrf(int value);
+    void setRateControl(const QString &mode, int bitrateKbps);
     void clear();
 signals:
     void logMessage(const QString &message);
+    void progress(int current, int total);
+    void completed(bool success, const QString &message);
 private:
     QVector<QString> files;
     QString resolution;
     QString fps_value;
     QString filename;
+    QString codec;
+    bool stretch = false;
+    int crf = 22;
+    QString rateControl = "quality";
+    int bitrateKbps = 8000;
     int frame_per_image = 0;
 };
 
